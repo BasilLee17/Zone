@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		CA1BA95A284042C8001E112D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BA959284042C8001E112D /* AppDelegate.swift */; };
 		CA1BA95C284042C8001E112D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BA95B284042C8001E112D /* SceneDelegate.swift */; };
-		CA1BA95E284042C8001E112D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BA95D284042C8001E112D /* ViewController.swift */; };
 		CA1BA961284042C8001E112D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1BA95F284042C8001E112D /* Main.storyboard */; };
 		CA1BA963284042CD001E112D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1BA962284042CD001E112D /* Assets.xcassets */; };
 		CA1BA966284042CD001E112D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1BA964284042CD001E112D /* LaunchScreen.storyboard */; };
+		CACC94ED284484DE000590FB /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC94EC284484DE000590FB /* MoodViewController.swift */; };
+		CACC94EF2844851C000590FB /* MeditateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC94EE2844851C000590FB /* MeditateViewController.swift */; };
+		CACC94F128448557000590FB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC94F028448557000590FB /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CA1BA956284042C8001E112D /* zoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1BA959284042C8001E112D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA1BA95B284042C8001E112D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CA1BA95D284042C8001E112D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA1BA960284042C8001E112D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA1BA962284042CD001E112D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA1BA965284042CD001E112D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA1BA967284042CD001E112D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CACC94EC284484DE000590FB /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
+		CACC94EE2844851C000590FB /* MeditateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditateViewController.swift; sourceTree = "<group>"; };
+		CACC94F028448557000590FB /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				CA1BA959284042C8001E112D /* AppDelegate.swift */,
 				CA1BA95B284042C8001E112D /* SceneDelegate.swift */,
-				CA1BA95D284042C8001E112D /* ViewController.swift */,
 				CA1BA95F284042C8001E112D /* Main.storyboard */,
 				CA1BA962284042CD001E112D /* Assets.xcassets */,
 				CA1BA964284042CD001E112D /* LaunchScreen.storyboard */,
 				CA1BA967284042CD001E112D /* Info.plist */,
+				CACC94EC284484DE000590FB /* MoodViewController.swift */,
+				CACC94EE2844851C000590FB /* MeditateViewController.swift */,
+				CACC94F028448557000590FB /* HistoryViewController.swift */,
 			);
 			path = zoneApp;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA1BA95E284042C8001E112D /* ViewController.swift in Sources */,
+				CACC94EF2844851C000590FB /* MeditateViewController.swift in Sources */,
+				CACC94ED284484DE000590FB /* MoodViewController.swift in Sources */,
 				CA1BA95A284042C8001E112D /* AppDelegate.swift in Sources */,
+				CACC94F128448557000590FB /* HistoryViewController.swift in Sources */,
 				CA1BA95C284042C8001E112D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
