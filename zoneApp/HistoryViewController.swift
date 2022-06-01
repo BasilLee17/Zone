@@ -16,12 +16,12 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     
     var totalSquares = [String]()
-    let tapGesture = UITapGestureRecognizer(target: HistoryViewController.self, action: #selector(tappedLabel(tapGestureRecognizer:)))
-    
-    @objc func tappedLabel(tapGestureRecognizer: UITapGestureRecognizer) {
-      // do stuff here
-        print("tapped: yo")
-    }
+//    let tapGesture = UITapGestureRecognizer(target: HistoryViewController.self, action: #selector(tappedLabel(tapGestureRecognizer:)))
+//
+//    @objc func tappedLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+//      // do stuff here
+//        print("tapped: yo")
+//    }
     
     override func viewDidLoad()
     {
@@ -87,7 +87,8 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
         
-        cell.dayOfMonth.text = totalSquares[indexPath.item]
+        cell.dayOfMonth.setTitle("\(totalSquares[indexPath.item])", for: .normal)
+        print("\(totalSquares[indexPath.item])")
         cell.isUserInteractionEnabled = true
         
         return cell

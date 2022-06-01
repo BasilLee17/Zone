@@ -9,8 +9,10 @@ import UIKit
 
 class CalendarCell: UICollectionViewCell {
     
-    @IBOutlet weak var dayOfMonth: UILabel!
-    func printDate() {
-        print("day: \(String(describing: dayOfMonth.text))")
-    }
+    
+    @IBOutlet weak var dayOfMonth: UIButton!
+    //    
+//    func printDate() {
+//        print("day: \(String(describing: dayOfMonth.text))")
+//    }
 }
