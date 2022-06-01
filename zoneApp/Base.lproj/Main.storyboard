@@ -238,15 +238,26 @@
                                     <action selector="backPressed:" destination="ccJ-19-ZuS" eventType="touchUpInside" id="zsH-sk-GaJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Er9-qh-ptd">
+                                <rect key="frame" x="160" y="50" width="108" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X2r-CY-UZs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Er9-qh-ptd" firstAttribute="top" secondItem="7dx-ZD-lHd" secondAttribute="top" constant="50" id="3UW-LL-Noa"/>
                             <constraint firstItem="vbO-pF-tV0" firstAttribute="top" secondItem="7dx-ZD-lHd" secondAttribute="top" constant="50" id="OPn-tZ-bFM"/>
                             <constraint firstItem="vbO-pF-tV0" firstAttribute="centerX" secondItem="7dx-ZD-lHd" secondAttribute="leading" constant="50" id="lXr-Lx-3Ft"/>
+                            <constraint firstItem="Er9-qh-ptd" firstAttribute="centerX" secondItem="7dx-ZD-lHd" secondAttribute="centerX" id="rWi-gH-THq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F4B-5o-vm1"/>
+                    <connections>
+                        <outlet property="DateLabel" destination="Er9-qh-ptd" id="06v-xG-NIi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQP-QP-8BV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

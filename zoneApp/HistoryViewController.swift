@@ -8,6 +8,7 @@
 import UIKit
 
 var selectedDate = Date()
+var selectedDay = Date()
 var dayReview = ""
 
 class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -89,7 +90,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
         
         cell.dayOfMonth.setTitle("\(totalSquares[indexPath.item])", for: .normal)
-        print("\(totalSquares[indexPath.item])")
+//        print("number: \(totalSquares[indexPath.item])")
         cell.isUserInteractionEnabled = true
         
         return cell
@@ -145,14 +146,10 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         dayValue = sender.currentTitle
         print("day type: \(type(of: dayValue))")
         print("day string: \(dayValue!)")
-//        if let setDay = dayValue {
-//            print("label type: \(type(of: setDay))")
-//            print("label string: \(setDay!)")
-//        }
-//        if let lat: String = dayValue! {
-//            //Do something with the non-optional lat
-//        }
         
-//        print("sender: \(setDay!)")
+        let year = CalendarHelper().yearString(date: selectedDate)
+        let month = CalendarHelper().monthString(date: selectedDate)
+        print("full date: \(String(describing: month)) \(String(describing: dayValue!)),\(year)")
+        dayReview = "\(String(describing: month)) \(String(describing: dayValue!)), \(year)"
     }
 }

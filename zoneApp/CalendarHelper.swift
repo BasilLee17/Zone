@@ -29,10 +29,24 @@ class CalendarHelper
         return dateFormatter.string(from: date)
     }
     
+    func monthShortString(date: Date) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M"
+        return dateFormatter.string(from: date)
+    }
+    
     func yearString(date: Date) -> String
     {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
+        return dateFormatter.string(from: date)
+    }
+    
+    func yearShortString(date: Date) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy"
         return dateFormatter.string(from: date)
     }
     
