@@ -9,7 +9,7 @@ import UIKit
 
 var selectedDate = Date()
 
-class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
 
     @IBOutlet weak var monthLabel: UILabel!
@@ -49,18 +49,28 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
             if(count <= startingSpaces || count - startingSpaces > daysInMonth)
             {
                 totalSquares.append("")
+                print("no emoji: \(count)")
             }
             else
             {
                 totalSquares.append(String(count - startingSpaces))
+                print("possibly emoji: \(count)")
             }
             count += 1
         }
         
         monthLabel.text = CalendarHelper().monthString(date: selectedDate)
             + " " + CalendarHelper().yearString(date: selectedDate)
+        
         collectionView.reloadData()
     }
+    
+    
+    
+    let inset: CGFloat = 10
+    let minimumLineSpacing: CGFloat = 10
+    let minimumInteritemSpacing: CGFloat = 10
+    let cellsPerRow = 5
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         totalSquares.count
@@ -73,6 +83,11 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return cell
     }
+    
+    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+
+            return CGSize(width: collectionView.bounds.size.width/3 - 25, height: collectionView.bounds.size.height/3 - 25)
+      }
 
     
     
