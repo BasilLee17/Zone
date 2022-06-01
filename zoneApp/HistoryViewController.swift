@@ -8,6 +8,7 @@
 import UIKit
 
 var selectedDate = Date()
+var dayReview = ""
 
 class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -135,5 +136,23 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         default:
             print("I have no idea what segue you're using")
         }
+    }
+    
+    @IBAction func dayTouchUpInside(_ sender: UIButton) {
+//        print("sender: \(String(describing: sender.titleLabel?.text))")
+//        var setDay: String? = nil
+        var dayValue: String?
+        dayValue = sender.currentTitle
+        print("day type: \(type(of: dayValue))")
+        print("day string: \(dayValue!)")
+//        if let setDay = dayValue {
+//            print("label type: \(type(of: setDay))")
+//            print("label string: \(setDay!)")
+//        }
+//        if let lat: String = dayValue! {
+//            //Do something with the non-optional lat
+//        }
+        
+//        print("sender: \(setDay!)")
     }
 }
