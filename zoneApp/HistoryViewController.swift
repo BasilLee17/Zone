@@ -101,12 +101,12 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
             return CGSize(width: collectionView.bounds.size.width/3 - 25, height: collectionView.bounds.size.height/3 - 25)
       }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-    }
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        insetForSectionAt section: Int) -> UIEdgeInsets {
+//
+//        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//    }
     
     
     @IBAction func previousMonth(_ sender: Any) {
@@ -149,7 +149,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         let year = CalendarHelper().yearString(date: selectedDate)
         let month = CalendarHelper().monthString(date: selectedDate)
-        print("full date: \(String(describing: month)) \(String(describing: dayValue!)),\(year)")
         dayReview = "\(String(describing: month)) \(String(describing: dayValue!)), \(year)"
+        print("full date: \(dayReview)")
     }
 }
