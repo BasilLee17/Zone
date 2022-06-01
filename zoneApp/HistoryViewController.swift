@@ -37,7 +37,13 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     func setMonthView()
     {
         totalSquares.removeAll()
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        let date = formatter.string(from: selectedDate)
         print("selectedDate: \(selectedDate)")
+        print("typeof: \(type(of: selectedDate.description)) \(type(of: selectedDate))")
+        print("date string: \(date) \(type(of: date))")
         
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
