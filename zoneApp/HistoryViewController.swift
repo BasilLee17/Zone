@@ -37,6 +37,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     func setMonthView()
     {
         totalSquares.removeAll()
+        print("selectedDate: \(selectedDate)")
         
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
@@ -66,12 +67,10 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return totalSquares.count
+//    }
     
-    let inset: CGFloat = 10
-    let minimumLineSpacing: CGFloat = 10
-    let minimumInteritemSpacing: CGFloat = 10
-    let cellsPerRow = 5
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         totalSquares.count
     }
@@ -88,7 +87,13 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
 
             return CGSize(width: collectionView.bounds.size.width/3 - 25, height: collectionView.bounds.size.height/3 - 25)
       }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
 
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
     
     
     @IBAction func previousMonth(_ sender: Any) {
