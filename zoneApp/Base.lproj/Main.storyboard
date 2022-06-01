@@ -151,14 +151,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calCell" id="tGE-bc-pGD" customClass="CalendarCell" customModule="zoneApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="30.666666666666657" height="71"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="30.666666666666657" height="91.333333333333329"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L0M-QQ-HTn">
-                                            <rect key="frame" x="0.0" y="0.0" width="30.666666666666657" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="30.666666666666657" height="91.333333333333329"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cu8-bq-xZb" userLabel="DateView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30.666666666666668" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="30.666666666666668" height="51.333333333333336"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuJ-Wf-Nue">
                                                             <rect key="frame" x="0.0" y="0.0" width="30.666666666666668" height="31"/>
@@ -169,6 +169,12 @@
                                                                 <segue destination="ccJ-19-ZuS" kind="show" id="LXZ-j6-H8o"/>
                                                             </connections>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO5-hc-jw5">
+                                                            <rect key="frame" x="0.0" y="31" width="30.666666666666668" height="20.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -182,6 +188,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="dayOfMonth" destination="NuJ-Wf-Nue" id="dki-Ai-7cZ"/>
+                                            <outlet property="moodEmoji" destination="hO5-hc-jw5" id="6vE-Zq-VCW"/>
                                             <segue destination="ccJ-19-ZuS" kind="show" id="XrP-5j-rai"/>
                                         </connections>
                                     </collectionViewCell>

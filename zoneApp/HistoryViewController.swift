@@ -10,6 +10,8 @@ import UIKit
 var selectedDate = Date()
 var selectedDay = Date()
 var dayReview = ""
+var moodHistory = [["date": "June 6, 2022", "mood": "1"], ["date": "June 12, 2022", "mood": "5"], ["date": "June 12, 2022", "mood": "5"]]
+var dateEntry: [String:String] = [:]
 
 class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -90,6 +92,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
         
         cell.dayOfMonth.setTitle("\(totalSquares[indexPath.item])", for: .normal)
+        
 //        print("number: \(totalSquares[indexPath.item])")
         cell.isUserInteractionEnabled = true
         
@@ -151,5 +154,22 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let month = CalendarHelper().monthString(date: selectedDate)
         dayReview = "\(String(describing: month)) \(String(describing: dayValue!)), \(year)"
         print("full date: \(dayReview)")
+        
+        let alertController = UIAlertController(title: "uh oh...", message: "You don't have any activity on \(String(describing: dayReview))", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default)
+        
+        for entry in moodHistory {
+            print("entry: \(entry)")
+            if entry["date"] == dayReview {
+                dateEntry = entry
+                print("matched date: \(String(describing: entry["date"]!))")
+            }
+        }
+        if dateEntry == [:] {
+//            dateEntry = ["date": dayReview, "mood": "0"]
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true, completion: nil)
+            print("no match: \(String(describing: dayReview))")
+        }
     }
 }
