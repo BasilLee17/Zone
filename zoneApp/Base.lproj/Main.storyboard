@@ -134,6 +134,12 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ls-aD-Gat">
+                                <rect key="frame" x="171.33333333333334" y="40" width="85.333333333333343" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="taQ-iQ-me8">
                                 <rect key="frame" x="0.0" y="115" width="428" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -165,6 +171,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="dayOfMonth" destination="lZj-2A-qAV" id="GFj-Ma-Jgr"/>
+                                            <segue destination="ccJ-19-ZuS" kind="show" id="XrP-5j-rai"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -172,12 +179,6 @@
                                     <outlet property="dataSource" destination="VIz-QZ-Sei" id="CoS-DM-dXY"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ls-aD-Gat">
-                                <rect key="frame" x="171.33333333333334" y="40" width="85.333333333333343" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wm9-O3-eV3"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -209,12 +210,43 @@
             </objects>
             <point key="canvasLocation" x="-164" y="591"/>
         </scene>
+        <!--Day View Controller-->
+        <scene sceneID="f5x-j1-RDu">
+            <objects>
+                <viewController id="ccJ-19-ZuS" customClass="DayViewController" customModule="zoneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7dx-ZD-lHd">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbO-pF-tV0">
+                                <rect key="frame" x="31.666666666666671" y="50.000000000000007" width="37" height="31.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="ccJ-19-ZuS" eventType="touchUpInside" id="zsH-sk-GaJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X2r-CY-UZs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vbO-pF-tV0" firstAttribute="top" secondItem="7dx-ZD-lHd" secondAttribute="top" constant="50" id="OPn-tZ-bFM"/>
+                            <constraint firstItem="vbO-pF-tV0" firstAttribute="centerX" secondItem="7dx-ZD-lHd" secondAttribute="leading" constant="50" id="lXr-Lx-3Ft"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F4B-5o-vm1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KQP-QP-8BV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-164.01869158878503" y="1257.6673866090714"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="brain.head.profile" catalog="system" width="114" height="128"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="101"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="face.dashed" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

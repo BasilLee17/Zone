@@ -16,7 +16,12 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     
     var totalSquares = [String]()
+    let tapGesture = UITapGestureRecognizer(target: HistoryViewController.self, action: #selector(tappedLabel(tapGestureRecognizer:)))
     
+    @objc func tappedLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+      // do stuff here
+        print("tapped: yo")
+    }
     
     override func viewDidLoad()
     {
@@ -56,12 +61,10 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
             if(count <= startingSpaces || count - startingSpaces > daysInMonth)
             {
                 totalSquares.append("")
-                print("no emoji: \(count)")
             }
             else
             {
                 totalSquares.append(String(count - startingSpaces))
-                print("possibly emoji: \(count)")
             }
             count += 1
         }
@@ -85,6 +88,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
         
         cell.dayOfMonth.text = totalSquares[indexPath.item]
+        cell.isUserInteractionEnabled = true
         
         return cell
     }
@@ -114,5 +118,21 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override open var shouldAutorotate: Bool {
         return false
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier
+        {
+        case Optional("fromFirstToSecond"):
+            print("Going from first to second")
+            let secondVC = segue.destination as!
+            DayViewController
+            secondVC.message = "Howdy from First"
+            secondVC.day = ""
+            break;
+        default:
+            print("I have no idea what segue you're using")
+        }
     }
 }
