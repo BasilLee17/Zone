@@ -53,6 +53,23 @@ struct MoodEntry{
                     return .red
                 }
             }
+            
+            var stringEmoji: String {
+                switch self {
+                case .none:
+                    return ""
+                case .happy:
+                    return "😁"
+                case .good:
+                    return "🙂"
+                case .meh:
+                    return "😐"
+                case .sad:
+                    return "😔"
+                case .cry:
+                    return "😭"
+                }
+            }
         }
 
 }

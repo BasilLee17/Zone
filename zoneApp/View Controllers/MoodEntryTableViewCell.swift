@@ -22,9 +22,11 @@ class MoodEntryTableViewCell: UITableViewCell {
     @IBOutlet weak var labelMoodTitle: UILabel!
     @IBOutlet weak var labelMoodDate: UILabel!
     @IBOutlet weak var imageViewMood: UIImageView!
+    @IBOutlet weak var labelEmoji: UILabel!
     
     func configure(_ entry: MoodEntry) {
         imageViewMood.backgroundColor = entry.mood.colorValue
+        labelEmoji.text = entry.mood.stringEmoji
         labelMoodTitle.text = entry.mood.stringValue
         labelMoodDate.text = entry.date.stringValue
     }

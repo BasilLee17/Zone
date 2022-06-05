@@ -74,7 +74,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="rDR-P5-c5G">
                                                     <rect key="frame" x="86" y="15" width="41.333333333333343" height="64"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqh-Tu-shm">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqh-Tu-shm">
                                                             <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20.333333333333332" id="AH6-kg-aHA"/>
@@ -83,7 +83,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxo-7h-qGh">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxo-7h-qGh">
                                                             <rect key="frame" x="0.0" y="43.333333333333336" width="41.333333333333336" height="20.666666666666664"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <nil key="textColor"/>
@@ -91,18 +91,29 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJp-sj-B9C">
+                                                    <rect key="frame" x="12" y="15" width="66" height="64"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rDR-P5-c5G" firstAttribute="top" secondItem="7Eh-l2-23d" secondAttribute="topMargin" constant="4" id="0Mh-6d-aoI"/>
                                                 <constraint firstItem="2SX-6U-EMr" firstAttribute="bottom" secondItem="7Eh-l2-23d" secondAttribute="bottomMargin" id="BkA-tU-8uc"/>
+                                                <constraint firstItem="cJp-sj-B9C" firstAttribute="trailing" secondItem="2SX-6U-EMr" secondAttribute="trailing" id="Cfd-iL-J88"/>
                                                 <constraint firstItem="2SX-6U-EMr" firstAttribute="leading" secondItem="7Eh-l2-23d" secondAttribute="leadingMargin" constant="-8" id="Cxq-Tf-W7v"/>
                                                 <constraint firstItem="rDR-P5-c5G" firstAttribute="leading" secondItem="2SX-6U-EMr" secondAttribute="trailing" constant="8" id="D30-um-0Ed"/>
+                                                <constraint firstItem="cJp-sj-B9C" firstAttribute="leading" secondItem="2SX-6U-EMr" secondAttribute="leading" id="VtT-bt-Vbg"/>
                                                 <constraint firstItem="2SX-6U-EMr" firstAttribute="centerY" secondItem="rDR-P5-c5G" secondAttribute="centerY" id="bfP-z2-NYQ"/>
+                                                <constraint firstItem="cJp-sj-B9C" firstAttribute="top" secondItem="2SX-6U-EMr" secondAttribute="top" id="hmF-gf-tCd"/>
+                                                <constraint firstItem="cJp-sj-B9C" firstAttribute="bottom" secondItem="2SX-6U-EMr" secondAttribute="bottom" id="uIj-RK-pAG"/>
                                                 <constraint firstItem="2SX-6U-EMr" firstAttribute="top" secondItem="rDR-P5-c5G" secondAttribute="top" id="yqi-uf-RVt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageViewMood" destination="2SX-6U-EMr" id="0d7-I7-0Q6"/>
+                                            <outlet property="labelEmoji" destination="cJp-sj-B9C" id="j6k-dF-soR"/>
                                             <outlet property="labelMoodDate" destination="Vxo-7h-qGh" id="shO-Sp-OVH"/>
                                             <outlet property="labelMoodTitle" destination="eqh-Tu-shm" id="iqt-rx-J80"/>
                                             <segue destination="Pe6-lV-j8Y" kind="show" identifier="show entry details" id="AlG-ed-guA"/>
@@ -152,6 +163,7 @@
                             <constraint firstItem="BDM-9L-p6u" firstAttribute="trailing" secondItem="pPq-2K-N7n" secondAttribute="trailing" id="dOL-sc-SsV"/>
                             <constraint firstItem="BDM-9L-p6u" firstAttribute="top" secondItem="FEN-jr-ONH" secondAttribute="top" constant="124" id="hGL-59-2wp"/>
                             <constraint firstItem="BDM-9L-p6u" firstAttribute="centerY" secondItem="pPq-2K-N7n" secondAttribute="centerY" id="hPX-Re-oKS"/>
+                            <constraint firstItem="3W6-td-uBL" firstAttribute="bottom" secondItem="FEN-jr-ONH" secondAttribute="bottom" id="vU9-HU-ZNg"/>
                             <constraint firstItem="3W6-td-uBL" firstAttribute="top" secondItem="BDM-9L-p6u" secondAttribute="bottom" constant="63" id="zp8-iu-5bg"/>
                         </constraints>
                     </view>
