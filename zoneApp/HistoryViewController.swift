@@ -97,6 +97,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         cell.dayOfMonth.setTitle("\(totalSquares[indexPath.item])", for: .normal)
         cell.moodEmoji.text = "🫥"
+        cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
         if totalSquares[indexPath.item] != "" {
             for mood in moodHistory {
 //                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
@@ -117,6 +118,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
                     default:
                         cell.moodEmoji.text = ""
                     }
+                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
                 }
             }
         } else {
