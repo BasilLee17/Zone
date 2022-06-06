@@ -186,7 +186,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BL-V0-7iJ">
-                                <rect key="frame" x="251.00000000000003" y="34.666666666666664" width="46.333333333333343" height="30.666666666666664"/>
+                                <rect key="frame" x="266" y="34.666666666666664" width="46.333333333333314" height="30.666666666666664"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right.fill" catalog="system"/>
                                 <connections>
@@ -194,7 +194,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDX-bl-h7Q">
-                                <rect key="frame" x="131" y="34.666666666666664" width="46.333333333333343" height="30.666666666666664"/>
+                                <rect key="frame" x="115.99999999999999" y="34.666666666666664" width="46.333333333333329" height="30.666666666666664"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward.fill" catalog="system" title=""/>
                                 <connections>
@@ -316,20 +316,40 @@
                                     <outlet property="dataSource" destination="VIz-QZ-Sei" id="CoS-DM-dXY"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9La-Hz-ccG">
+                                <rect key="frame" x="357" y="34.666666666666664" width="71" height="30.999999999999993"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Weekly"/>
+                                <connections>
+                                    <segue destination="qKP-DO-g2X" kind="show" id="2TG-qf-v3c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ce-Cn-zzg">
+                                <rect key="frame" x="0.0" y="34.666666666666664" width="72" height="30.999999999999993"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Journal"/>
+                                <connections>
+                                    <segue destination="u6P-25-eIX" kind="show" id="ubw-ui-e0n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wm9-O3-eV3"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3ls-aD-Gat" firstAttribute="centerY" secondItem="GZf-aq-gJe" secondAttribute="top" constant="50" id="2Zq-hP-C1Z"/>
+                            <constraint firstItem="1Ce-Cn-zzg" firstAttribute="leading" secondItem="GZf-aq-gJe" secondAttribute="leading" id="3o4-5w-mly"/>
                             <constraint firstItem="JaW-xy-NFE" firstAttribute="centerX" secondItem="3ls-aD-Gat" secondAttribute="centerX" id="50P-td-lPv"/>
                             <constraint firstItem="taQ-iQ-me8" firstAttribute="top" secondItem="JaW-xy-NFE" secondAttribute="bottom" id="61V-GB-dFx"/>
                             <constraint firstItem="Wm9-O3-eV3" firstAttribute="bottom" secondItem="taQ-iQ-me8" secondAttribute="bottom" id="9gC-rw-12T"/>
                             <constraint firstItem="DDX-bl-h7Q" firstAttribute="centerY" secondItem="GZf-aq-gJe" secondAttribute="top" constant="50" id="RTv-4O-Kvp"/>
+                            <constraint firstItem="1Ce-Cn-zzg" firstAttribute="centerY" secondItem="GZf-aq-gJe" secondAttribute="top" constant="50" id="V4u-jq-YCj"/>
+                            <constraint firstItem="9La-Hz-ccG" firstAttribute="trailing" secondItem="GZf-aq-gJe" secondAttribute="trailing" id="ZWx-F0-5f5"/>
                             <constraint firstItem="Wm9-O3-eV3" firstAttribute="trailing" secondItem="taQ-iQ-me8" secondAttribute="trailing" id="a1A-Ng-TCl"/>
                             <constraint firstItem="JaW-xy-NFE" firstAttribute="leading" secondItem="Wm9-O3-eV3" secondAttribute="leading" id="djm-zq-67B"/>
                             <constraint firstItem="3ls-aD-Gat" firstAttribute="centerX" secondItem="GZf-aq-gJe" secondAttribute="centerX" id="edv-JE-t79"/>
-                            <constraint firstItem="8BL-V0-7iJ" firstAttribute="centerX" secondItem="GZf-aq-gJe" secondAttribute="centerX" constant="60" id="fvu-H9-hIv"/>
-                            <constraint firstItem="DDX-bl-h7Q" firstAttribute="centerX" secondItem="GZf-aq-gJe" secondAttribute="centerX" constant="-60" id="iYI-Eu-Svd"/>
+                            <constraint firstItem="8BL-V0-7iJ" firstAttribute="centerX" secondItem="GZf-aq-gJe" secondAttribute="centerX" constant="75" id="fvu-H9-hIv"/>
+                            <constraint firstItem="DDX-bl-h7Q" firstAttribute="centerX" secondItem="GZf-aq-gJe" secondAttribute="centerX" constant="-75" id="iYI-Eu-Svd"/>
+                            <constraint firstItem="9La-Hz-ccG" firstAttribute="centerY" secondItem="GZf-aq-gJe" secondAttribute="top" constant="50" id="jId-TF-ar6"/>
                             <constraint firstItem="taQ-iQ-me8" firstAttribute="leading" secondItem="Wm9-O3-eV3" secondAttribute="leading" id="lxx-Qr-R0P"/>
                             <constraint firstItem="Wm9-O3-eV3" firstAttribute="trailing" secondItem="JaW-xy-NFE" secondAttribute="trailing" id="qrb-9U-lGg"/>
                             <constraint firstItem="8BL-V0-7iJ" firstAttribute="centerY" secondItem="GZf-aq-gJe" secondAttribute="top" constant="50" id="rWl-SM-Bp7"/>
@@ -540,7 +560,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQP-QP-8BV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164.01869158878503" y="1257.6673866090714"/>
+            <point key="canvasLocation" x="-164" y="1262"/>
+        </scene>
+        <!--Day View Controller-->
+        <scene sceneID="mgu-Jz-OPq">
+            <objects>
+                <viewController id="qKP-DO-g2X" customClass="DayViewController" customModule="zoneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dlm-tQ-JM0">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKw-Tc-HTJ">
+                                <rect key="frame" x="31.666666666666671" y="50.000000000000007" width="37" height="31.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="qKP-DO-g2X" eventType="touchUpInside" id="xKE-8S-hsF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjK-oT-Dsm">
+                                <rect key="frame" x="160" y="50" width="108" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ncM-RM-xIs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MjK-oT-Dsm" firstAttribute="top" secondItem="dlm-tQ-JM0" secondAttribute="top" constant="50" id="K0N-Ew-nke"/>
+                            <constraint firstItem="zKw-Tc-HTJ" firstAttribute="top" secondItem="dlm-tQ-JM0" secondAttribute="top" constant="50" id="RuY-6m-Oh6"/>
+                            <constraint firstItem="MjK-oT-Dsm" firstAttribute="centerX" secondItem="dlm-tQ-JM0" secondAttribute="centerX" id="c8I-I4-iEX"/>
+                            <constraint firstItem="zKw-Tc-HTJ" firstAttribute="centerX" secondItem="dlm-tQ-JM0" secondAttribute="leading" constant="50" id="tZI-m1-k9F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TLo-ir-Dp5"/>
+                    <connections>
+                        <outlet property="DateLabel" destination="MjK-oT-Dsm" id="yYd-2F-9dc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0m-UN-Zl6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="1091"/>
+        </scene>
+        <!--Day View Controller-->
+        <scene sceneID="KPx-WW-UH3">
+            <objects>
+                <viewController id="u6P-25-eIX" customClass="DayViewController" customModule="zoneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ATz-qJ-J7s">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7p-EW-dd2">
+                                <rect key="frame" x="31.666666666666671" y="50.000000000000007" width="37" height="31.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="u6P-25-eIX" eventType="touchUpInside" id="WxF-9G-SMR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ6-lz-Dwt">
+                                <rect key="frame" x="160" y="50" width="108" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RdI-y3-Wgg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xJ6-lz-Dwt" firstAttribute="top" secondItem="ATz-qJ-J7s" secondAttribute="top" constant="50" id="Ath-RW-dSH"/>
+                            <constraint firstItem="N7p-EW-dd2" firstAttribute="centerX" secondItem="ATz-qJ-J7s" secondAttribute="leading" constant="50" id="JRw-21-M8C"/>
+                            <constraint firstItem="xJ6-lz-Dwt" firstAttribute="centerX" secondItem="ATz-qJ-J7s" secondAttribute="centerX" id="n27-zo-l0z"/>
+                            <constraint firstItem="N7p-EW-dd2" firstAttribute="top" secondItem="ATz-qJ-J7s" secondAttribute="top" constant="50" id="qCO-zE-Dkh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gEn-3j-pcK"/>
+                    <connections>
+                        <outlet property="DateLabel" destination="xJ6-lz-Dwt" id="3dg-dO-5b1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t88-PT-psM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="403"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

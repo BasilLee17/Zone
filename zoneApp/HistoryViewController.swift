@@ -52,7 +52,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         totalSquares.removeAll()
         
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
+//        formatter.dateStyle = .short
         let date = formatter.string(from: selectedDate)
         print("selectedDate: \(selectedDate)")
         print("typeof: \(type(of: selectedDate.description)) \(type(of: selectedDate))")
