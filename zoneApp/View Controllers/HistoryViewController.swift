@@ -10,12 +10,14 @@ import UIKit
 var selectedDate = Date()
 var selectedDay = Date()
 var dayReview = ""
+var dateReview = ""
 var moodHistory = [
     ["date": "June 6, 2022", "mood": "1", "dayOfMonth": "6", "month": "June 2022"],
     ["date": "June 12, 2022", "mood": "5", "dayOfMonth": "12", "month": "June 2022"],
     ["date": "June 27, 2022", "mood": "5", "dayOfMonth": "27", "month": "June 2022"]
 ]
-var dateEntry: [String:String] = [:]
+var dayEntry: [String:String] = [:]
+var dateEntry: String = ""
 
 class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -102,45 +104,45 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
 //        print("num square: \(totalSquares[indexPath.item])")
         if totalSquares[indexPath.item] != "" {
             let currentMonth = monthLabel.text
-            for mood in moodHistory {
-//                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
-//                print("mood month: \(mood["month"])")
-//                print("month label: \(String(describing: monthLabel.text))")
-                if mood["dayOfMonth"]! == totalSquares[indexPath.item] && mood["month"] == monthLabel.text {
-                    print("day: \(String(describing: mood["dayOfMonth"]!))")
-                    print("squares: \(totalSquares[indexPath.item])")
-                    switch mood["mood"] {
-                    case "1":
-                        cell.moodEmoji.text = "😭"
-                    case "2":
-                        cell.moodEmoji.text = "😔"
-                    case "3":
-                        cell.moodEmoji.text = "😐"
-                    case "4":
-                        cell.moodEmoji.text = "🙂"
-                    case "5":
-                        cell.moodEmoji.text = "😄"
-                    default:
-                        cell.moodEmoji.text = ""
-                    }
-                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
-                }
-            }
+//            for mood in moodHistory {
+////                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
+////                print("mood month: \(mood["month"])")
+////                print("month label: \(String(describing: monthLabel.text))")
+//                if mood["dayOfMonth"]! == totalSquares[indexPath.item] && mood["month"] == monthLabel.text {
+//                    print("day: \(String(describing: mood["dayOfMonth"]!))")
+//                    print("squares: \(totalSquares[indexPath.item])")
+//                    switch mood["mood"] {
+//                    case "1":
+//                        cell.moodEmoji.text = "😭"
+//                    case "2":
+//                        cell.moodEmoji.text = "😔"
+//                    case "3":
+//                        cell.moodEmoji.text = "😐"
+//                    case "4":
+//                        cell.moodEmoji.text = "🙂"
+//                    case "5":
+//                        cell.moodEmoji.text = "😄"
+//                    default:
+//                        cell.moodEmoji.text = ""
+//                    }
+//                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
+//                }
+//            }
             
             for entry in moodEntries {
 //                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
-//                print("mood month: \(mood["month"])")
-//                print("month label: \(String(describing: monthLabel.text))")
-//                print("struct day type: \(type(of: entry.dayOfMonth))")
-//                print("totalSq num type: \(type(of: totalSquares[indexPath.item]))")
-//                print("squares: \(totalSquares[indexPath.item])")
-//                print("day: \(String(describing: entry.dayOfMonth))")
-//
-//                print("struct month type: \(type(of: entry.month))")
-//                print("entry month: \(entry.month)")
-//
-//                print("month label type: \(type(of: monthLabel.text!))")
-//                print("label: \(monthLabel.text!)")
+                print("mood month: \(entry.month)")
+                print("month label: \(String(describing: monthLabel.text!))")
+                print("struct day type: \(type(of: entry.dayOfMonth))")
+                print("totalSq num type: \(type(of: totalSquares[indexPath.item]))")
+                print("squares: \(totalSquares[indexPath.item])")
+                print("day: \(String(describing: entry.dayOfMonth))")
+
+                print("struct month type: \(type(of: entry.month))")
+                print("entry month: \(entry.month)")
+
+                print("month label type: \(type(of: monthLabel.text!))")
+                print("label: \(monthLabel.text!)")
                 if entry.dayOfMonth == totalSquares[indexPath.item] && entry.month == monthLabel.text! {
 //                    switch mood["mood"] {
 //                    case "1":
@@ -156,9 +158,9 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
 //                    default:
 //                        cell.moodEmoji.text = ""
 //                    }
-//                    cell.moodEmoji.text = entry.mood.stringEmoji
+                    cell.moodEmoji.text = entry.mood.stringEmoji
                     print("emoji: \(entry.mood.stringEmoji)")
-//                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
+                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
                 }
             }
         } else {
@@ -241,34 +243,44 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let year = CalendarHelper().yearString(date: selectedDate)
         let month = CalendarHelper().monthString(date: selectedDate)
         dayReview = "\(String(describing: month)) \(String(describing: dayValue!)), \(year)"
-        print("full date: \(dayReview)")
+        dateReview = "\(String(describing: month)) \(String(describing: dayValue!)), \(year)"
+        print("full day: \(dayReview)")
+        print("full date: \(dateReview)")
         
         let alertController = UIAlertController(title: "uh oh...", message: "You don't have any activity on \(String(describing: dayReview))", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)
-        dateEntry = [:]
+        dayEntry = [:]
         
         for entry in moodHistory {
             print("entry: \(entry)")
             if entry["date"] == dayReview {
-                dateEntry = entry
+                dayEntry = entry
                 print("matched date: \(String(describing: entry["date"]!))")
             } else {
                 print("not matched: \(String(describing: entry["date"]!))")
             }
         }
         
-//        for entry in moodEntries {
-//            print("entry date: \(entry.monthDayYear)")
-//            print("day review: \(dayReview)")
-//            if entry.monthDayYear == dayReview {
-////                dateEntry = entry.date
-//                print("matched date: \(String(describing: entry.monthDayYear))")
-//            } else {
-//                print("not matched: \(entry.monthDayYear)")
-//            }
+        dateEntry = ""
+        
+        for entry in moodEntries {
+            print("entry date: \(entry.monthDayYear)")
+            print("day review: \(dateReview)")
+            if entry.monthDayYear == dateReview {
+//                dateEntry = entry.date
+                dateEntry = entry.monthDayYear
+                print("matched date: \(String(describing: dateEntry))")
+            } else {
+                print("not matched: \(entry.monthDayYear)")
+            }
+        }
+//        if dayEntry == [:] {
+////            dateEntry = ["date": dayReview, "mood": "0"]
+//            alertController.addAction(OKAction)
+//            self.present(alertController, animated: true, completion: nil)
 //        }
-        if dateEntry == [:] {
-//            dateEntry = ["date": dayReview, "mood": "0"]
+        
+        if dateEntry == "" {
             alertController.addAction(OKAction)
             self.present(alertController, animated: true, completion: nil)
         }
