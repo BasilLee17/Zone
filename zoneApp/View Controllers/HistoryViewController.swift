@@ -15,7 +15,7 @@ var moodHistory = [
     ["date": "June 12, 2022", "mood": "5", "dayOfMonth": "12", "month": "June 2022"],
     ["date": "June 27, 2022", "mood": "5", "dayOfMonth": "27", "month": "June 2022"]
 ]
-//var dateEntry: [String:String] = [:]
+var dateEntry: [String:String] = [:]
 
 class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -156,9 +156,9 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
 //                    default:
 //                        cell.moodEmoji.text = ""
 //                    }
-                    cell.moodEmoji.text = entry.mood.stringEmoji
+//                    cell.moodEmoji.text = entry.mood.stringEmoji
                     print("emoji: \(entry.mood.stringEmoji)")
-                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
+//                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
                 }
             }
         } else {
@@ -245,21 +245,32 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         let alertController = UIAlertController(title: "uh oh...", message: "You don't have any activity on \(String(describing: dayReview))", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)
+        dateEntry = [:]
         
-        for entry in moodEntries {
-            print("entry date: \(entry.monthDayYear)")
-            print("day review: \(dayReview)")
-            if entry.monthDayYear == dayReview {
-//                dateEntry = entry.date
-                print("matched date: \(String(describing: entry.monthDayYear))")
+        for entry in moodHistory {
+            print("entry: \(entry)")
+            if entry["date"] == dayReview {
+                dateEntry = entry
+                print("matched date: \(String(describing: entry["date"]!))")
             } else {
-                print("not matched: \(entry.monthDayYear)")
+                print("not matched: \(String(describing: entry["date"]!))")
             }
         }
-//        if dateEntry == [:] {
-////            dateEntry = ["date": dayReview, "mood": "0"]
-//            alertController.addAction(OKAction)
-//            self.present(alertController, animated: true, completion: nil)
+        
+//        for entry in moodEntries {
+//            print("entry date: \(entry.monthDayYear)")
+//            print("day review: \(dayReview)")
+//            if entry.monthDayYear == dayReview {
+////                dateEntry = entry.date
+//                print("matched date: \(String(describing: entry.monthDayYear))")
+//            } else {
+//                print("not matched: \(entry.monthDayYear)")
+//            }
 //        }
+        if dateEntry == [:] {
+//            dateEntry = ["date": dayReview, "mood": "0"]
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
