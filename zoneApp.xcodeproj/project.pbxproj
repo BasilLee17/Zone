@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C3327C6284C7D8100C74B3A /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327C5284C7D8100C74B3A /* MoodEntry.swift */; };
+		7C3327C8284C81EB00C74B3A /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327C7284C81EB00C74B3A /* Mood.swift */; };
+		7C3327CE284C8D7600C74B3A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327CD284C8D7600C74B3A /* UIColor.swift */; };
+		7C3327D0284C8E0300C74B3A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327CF284C8E0300C74B3A /* UIImage.swift */; };
+		7C3327D2284CA50A00C74B3A /* MoodDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327D1284CA50A00C74B3A /* MoodDetailedViewController.swift */; };
+		7C3327D6284D13A400C74B3A /* MoodEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327D5284D13A400C74B3A /* MoodEntryTableViewCell.swift */; };
+		7C3327D8284D1E5200C74B3A /* DateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327D7284D1E5200C74B3A /* DateString.swift */; };
+		7C3327DA284D6BD000C74B3A /* userNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327D9284D6BD000C74B3A /* userNotification.swift */; };
 		CA1BA95A284042C8001E112D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BA959284042C8001E112D /* AppDelegate.swift */; };
 		CA1BA95C284042C8001E112D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BA95B284042C8001E112D /* SceneDelegate.swift */; };
 		CA1BA961284042C8001E112D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1BA95F284042C8001E112D /* Main.storyboard */; };
@@ -21,6 +29,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C3327C5284C7D8100C74B3A /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
+		7C3327C7284C81EB00C74B3A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		7C3327CD284C8D7600C74B3A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		7C3327CF284C8E0300C74B3A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		7C3327D1284CA50A00C74B3A /* MoodDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailedViewController.swift; sourceTree = "<group>"; };
+		7C3327D5284D13A400C74B3A /* MoodEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryTableViewCell.swift; sourceTree = "<group>"; };
+		7C3327D7284D1E5200C74B3A /* DateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateString.swift; sourceTree = "<group>"; };
+		7C3327D9284D6BD000C74B3A /* userNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userNotification.swift; sourceTree = "<group>"; };
+		7C3327DB284D6E1700C74B3A /* zoneApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zoneApp.entitlements; sourceTree = "<group>"; };
 		CA1BA956284042C8001E112D /* zoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1BA959284042C8001E112D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA1BA95B284042C8001E112D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +64,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C3327C9284C8C5200C74B3A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C3327C7284C81EB00C74B3A /* Mood.swift */,
+				7C3327CD284C8D7600C74B3A /* UIColor.swift */,
+				7C3327CF284C8E0300C74B3A /* UIImage.swift */,
+				7C3327D7284D1E5200C74B3A /* DateString.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C3327CB284C8C9F00C74B3A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C3327C5284C7D8100C74B3A /* MoodEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C3327CC284C8CCF00C74B3A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C3327D5284D13A400C74B3A /* MoodEntryTableViewCell.swift */,
+				7C3327D1284CA50A00C74B3A /* MoodDetailedViewController.swift */,
+				CACC94EC284484DE000590FB /* MoodViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		CA1BA94D284042C8001E112D = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +112,11 @@
 		CA1BA958284042C8001E112D /* zoneApp */ = {
 			isa = PBXGroup;
 			children = (
+				7C3327DB284D6E1700C74B3A /* zoneApp.entitlements */,
+				7C3327D9284D6BD000C74B3A /* userNotification.swift */,
+				7C3327CB284C8C9F00C74B3A /* Models */,
+				7C3327C9284C8C5200C74B3A /* Extensions */,
+				7C3327CC284C8CCF00C74B3A /* View Controllers */,
 				CA1BA959284042C8001E112D /* AppDelegate.swift */,
 				CA1BA95B284042C8001E112D /* SceneDelegate.swift */,
 				CA1BA95F284042C8001E112D /* Main.storyboard */,
@@ -74,7 +125,6 @@
 				CA1BA962284042CD001E112D /* Assets.xcassets */,
 				CA1BA964284042CD001E112D /* LaunchScreen.storyboard */,
 				CA1BA967284042CD001E112D /* Info.plist */,
-				CACC94EC284484DE000590FB /* MoodViewController.swift */,
 				CACC94EE2844851C000590FB /* MeditateViewController.swift */,
 				CACC94F028448557000590FB /* HistoryViewController.swift */,
 				DBB76AA02847A98C007DBA06 /* DayViewController.swift */,
@@ -157,10 +207,18 @@
 				DBB76A9D284717AD007DBA06 /* CalendarCell.swift in Sources */,
 				CACC94ED284484DE000590FB /* MoodViewController.swift in Sources */,
 				CA1BA95A284042C8001E112D /* AppDelegate.swift in Sources */,
+				7C3327D2284CA50A00C74B3A /* MoodDetailedViewController.swift in Sources */,
+				7C3327D6284D13A400C74B3A /* MoodEntryTableViewCell.swift in Sources */,
+				7C3327C8284C81EB00C74B3A /* Mood.swift in Sources */,
+				7C3327DA284D6BD000C74B3A /* userNotification.swift in Sources */,
 				CACC94F128448557000590FB /* HistoryViewController.swift in Sources */,
 				CA1BA95C284042C8001E112D /* SceneDelegate.swift in Sources */,
 				DBB76A9F28471C96007DBA06 /* CalendarHelper.swift in Sources */,
+				7C3327CE284C8D7600C74B3A /* UIColor.swift in Sources */,
+				7C3327D8284D1E5200C74B3A /* DateString.swift in Sources */,
 				DBB76AA12847A98C007DBA06 /* DayViewController.swift in Sources */,
+				7C3327C6284C7D8100C74B3A /* MoodEntry.swift in Sources */,
+				7C3327D0284C8E0300C74B3A /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +363,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = zoneApp/zoneApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -314,6 +373,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = zoneApp/zoneApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -341,6 +402,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
