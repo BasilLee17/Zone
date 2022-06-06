@@ -25,6 +25,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var tableView: UITableView!
     
     var totalSquares = [Date]()
+    var day: String = ""
 //    let tapGesture = UITapGestureRecognizer(target: HistoryViewController.self, action: #selector(tappedLabel(tapGestureRecognizer:)))
 //
 //    @objc func tappedLabel(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -41,7 +42,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func setCellsView()
     {
-        let width = (collectionView.frame.size.width - 2) / 7
+        let width = (collectionView.frame.size.width - 2) / 8
         let height = (collectionView.frame.size.height - 2) / 8
         
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -140,18 +141,18 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
 //        var setDay: String? = nil
         var dayValue: String?
         dayValue = sender.currentTitle
-        print("day type: \(type(of: dayValue))")
-        print("day string: \(dayValue!)")
+//        print("day type: \(type(of: dayValue))")
+//        print("day string: \(dayValue!)")
         
         let year = CalendarHelper().yearString(date: selectedDate)
         let month = CalendarHelper().monthString(date: selectedDate)
         dayReview = "\(String(describing: month)) \(String(describing: dayValue!)), \(year)"
         print("full date: \(dayReview)")
         
-        for entry in moodHistory {
-            if entry["date"] == dayReview {
+        for entry in moodEntries {
+            if entry.monthDayYear == dayReview {
 //                dateEntry = entry
-                print("matched date: \(String(describing: entry["date"]!))")
+                print("matched date: \(String(describing: entry.monthDayYear))")
             }
         }
     }

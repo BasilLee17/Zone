@@ -131,16 +131,16 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
 //                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
 //                print("mood month: \(mood["month"])")
 //                print("month label: \(String(describing: monthLabel.text))")
-                print("struct day type: \(type(of: entry.dayOfMonth))")
-                print("totalSq num type: \(type(of: totalSquares[indexPath.item]))")
-                print("squares: \(totalSquares[indexPath.item])")
-                print("day: \(String(describing: entry.dayOfMonth))")
-                
-                print("struct month type: \(type(of: entry.month))")
-                print("entry month: \(entry.month)")
-                
-                print("month label type: \(type(of: monthLabel.text!))")
-                print("label: \(monthLabel.text!)")
+//                print("struct day type: \(type(of: entry.dayOfMonth))")
+//                print("totalSq num type: \(type(of: totalSquares[indexPath.item]))")
+//                print("squares: \(totalSquares[indexPath.item])")
+//                print("day: \(String(describing: entry.dayOfMonth))")
+//
+//                print("struct month type: \(type(of: entry.month))")
+//                print("entry month: \(entry.month)")
+//
+//                print("month label type: \(type(of: monthLabel.text!))")
+//                print("label: \(monthLabel.text!)")
                 if entry.dayOfMonth == totalSquares[indexPath.item] && entry.month == monthLabel.text! {
 //                    switch mood["mood"] {
 //                    case "1":
@@ -214,15 +214,16 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
             break;
         case Optional("toDayView"):
             print("Going from first to second")
-            let secondVC = segue.destination as!
+            let dayVC = segue.destination as!
             DayViewController
-            secondVC.message = "Howdy from First"
-            secondVC.day = dayReview
+            dayVC.message = "Howdy from First"
+            dayVC.day = dayReview
             break;
         case Optional("toWeeklyView"):
             print("Going from first to second")
-            let secondVC = segue.destination as!
+            let weeklyVC = segue.destination as!
             WeeklyViewController
+            weeklyVC.day = dayReview
             break;
         default:
             print("I have no idea what segue you're using")
@@ -234,8 +235,8 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
 //        var setDay: String? = nil
         var dayValue: String?
         dayValue = sender.currentTitle
-        print("day type: \(type(of: dayValue))")
-        print("day string: \(dayValue!)")
+//        print("day type: \(type(of: dayValue))")
+//        print("day string: \(dayValue!)")
         
         let year = CalendarHelper().yearString(date: selectedDate)
         let month = CalendarHelper().monthString(date: selectedDate)
@@ -246,11 +247,13 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let OKAction = UIAlertAction(title: "OK", style: .default)
         
         for entry in moodEntries {
-            print("entry date: \(entry.date)")
+            print("entry date: \(entry.monthDayYear)")
             print("day review: \(dayReview)")
             if entry.monthDayYear == dayReview {
 //                dateEntry = entry.date
-                print("matched date: \(String(describing: entry.date))")
+                print("matched date: \(String(describing: entry.monthDayYear))")
+            } else {
+                print("not matched: \(entry.monthDayYear)")
             }
         }
 //        if dateEntry == [:] {
