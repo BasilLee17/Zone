@@ -97,35 +97,35 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
         
         cell.dayOfMonth.setTitle("\(totalSquares[indexPath.item])", for: .normal)
-        cell.moodEmoji.text = "🫥"
+        cell.moodEmoji.text = String(describing: "🫥")
         cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
-        print("num square: \(totalSquares[indexPath.item])")
+//        print("num square: \(totalSquares[indexPath.item])")
         if totalSquares[indexPath.item] != "" {
-//            let currentMonth = monthLabel.text
-//            for mood in moodHistory {
-////                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
-////                print("mood month: \(mood["month"])")
-////                print("month label: \(String(describing: monthLabel.text))")
-//                if mood["dayOfMonth"]! == totalSquares[indexPath.item] && mood["month"] == monthLabel.text {
-//                    print("day: \(String(describing: mood["dayOfMonth"]!))")
-//                    print("squares: \(totalSquares[indexPath.item])")
-//                    switch mood["mood"] {
-//                    case "1":
-//                        cell.moodEmoji.text = "😭"
-//                    case "2":
-//                        cell.moodEmoji.text = "😔"
-//                    case "3":
-//                        cell.moodEmoji.text = "😐"
-//                    case "4":
-//                        cell.moodEmoji.text = "🙂"
-//                    case "5":
-//                        cell.moodEmoji.text = "😄"
-//                    default:
-//                        cell.moodEmoji.text = ""
-//                    }
-//                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
-//                }
-//            }
+            let currentMonth = monthLabel.text
+            for mood in moodHistory {
+//                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
+//                print("mood month: \(mood["month"])")
+//                print("month label: \(String(describing: monthLabel.text))")
+                if mood["dayOfMonth"]! == totalSquares[indexPath.item] && mood["month"] == monthLabel.text {
+                    print("day: \(String(describing: mood["dayOfMonth"]!))")
+                    print("squares: \(totalSquares[indexPath.item])")
+                    switch mood["mood"] {
+                    case "1":
+                        cell.moodEmoji.text = "😭"
+                    case "2":
+                        cell.moodEmoji.text = "😔"
+                    case "3":
+                        cell.moodEmoji.text = "😐"
+                    case "4":
+                        cell.moodEmoji.text = "🙂"
+                    case "5":
+                        cell.moodEmoji.text = "😄"
+                    default:
+                        cell.moodEmoji.text = ""
+                    }
+                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
+                }
+            }
             
             for entry in moodEntries {
 //                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
@@ -166,7 +166,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
 //        print("number: \(totalSquares[indexPath.item])")
-        cell.isUserInteractionEnabled = true
+//        cell.isUserInteractionEnabled = true
         cell.layoutIfNeeded()
         
         return cell
@@ -208,7 +208,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         switch segue.identifier
         {
         case Optional("toJournalView"):
-            print("Going from first to second")
+            print("Going from first to journalView")
             let secondVC = segue.destination as!
             JournalViewController
             break;

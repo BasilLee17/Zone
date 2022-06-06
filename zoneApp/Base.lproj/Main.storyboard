@@ -286,6 +286,9 @@
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO5-hc-jw5">
                                                             <rect key="frame" x="0.0" y="30.666666666666671" width="64" height="20.333333333333329"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                            </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20.333333333333329" id="10i-hL-1qH"/>
                                                             </constraints>
@@ -311,13 +314,13 @@
                                         <size key="customSize" width="64" height="91"/>
                                         <connections>
                                             <outlet property="dayOfMonth" destination="NuJ-Wf-Nue" id="dki-Ai-7cZ"/>
-                                            <outlet property="moodEmoji" destination="hO5-hc-jw5" id="6vE-Zq-VCW"/>
-                                            <segue destination="ccJ-19-ZuS" kind="show" identifier="toDayView" id="XrP-5j-rai"/>
+                                            <outlet property="moodEmoji" destination="hO5-hc-jw5" id="QAk-Yl-xpK"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="VIz-QZ-Sei" id="CoS-DM-dXY"/>
+                                    <outlet property="delegate" destination="VIz-QZ-Sei" id="fBl-14-dyJ"/>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9La-Hz-ccG">
@@ -827,7 +830,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LXZ-j6-H8o"/>
         <segue reference="jIb-rd-DTl"/>
     </inferredMetricsTieBreakers>
     <resources>
