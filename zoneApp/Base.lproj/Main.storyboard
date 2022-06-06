@@ -144,24 +144,24 @@
                                 <rect key="frame" x="0.0" y="115" width="428" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="2" minimumInteritemSpacing="2" id="fce-yP-1KT">
-                                    <size key="itemSize" width="100" height="50"/>
+                                    <size key="itemSize" width="63" height="91"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calCell" id="tGE-bc-pGD" customClass="CalendarCell" customModule="zoneApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="30.666666666666657" height="91.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="63" height="91"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L0M-QQ-HTn">
-                                            <rect key="frame" x="0.0" y="0.0" width="30.666666666666657" height="91.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="63" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cu8-bq-xZb" userLabel="DateView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30.666666666666668" height="51.333333333333336"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="63" height="51"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuJ-Wf-Nue">
-                                                            <rect key="frame" x="0.0" y="0.0" width="30.666666666666668" height="31"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuJ-Wf-Nue">
+                                                            <rect key="frame" x="0.0" y="0.0" width="63" height="30.666666666666668"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="1"/>
                                                             <connections>
@@ -169,8 +169,8 @@
                                                                 <segue destination="ccJ-19-ZuS" kind="show" id="LXZ-j6-H8o"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO5-hc-jw5">
-                                                            <rect key="frame" x="0.0" y="31" width="30.666666666666668" height="20.333333333333329"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="😁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO5-hc-jw5">
+                                                            <rect key="frame" x="0.0" y="30.666666666666671" width="63" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -186,6 +186,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="Cu8-bq-xZb" secondAttribute="trailing" id="y9n-iq-gcJ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="63" height="91"/>
                                         <connections>
                                             <outlet property="dayOfMonth" destination="NuJ-Wf-Nue" id="dki-Ai-7cZ"/>
                                             <outlet property="moodEmoji" destination="hO5-hc-jw5" id="6vE-Zq-VCW"/>
