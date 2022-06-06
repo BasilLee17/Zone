@@ -63,15 +63,6 @@ class MoodViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-//    @IBAction func pressCalendar(_ sender: UIBarButtonItem) {
-//        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        guard let calendarVc = mainStoryboard.instantiateViewController(withIdentifier: "calendar vc") as? CalendarViewController else {
-//            return print("storyboard not set up correctly, check the identity of \"calendar vc\"")
-//        }
-//
-//        present(calendarVc, animated: true, completion: nil)
-//    }
-//
     @IBAction func unwindToHome(_ segue: UIStoryboardSegue) {
         guard let identifier = segue.identifier else {
             return
@@ -82,7 +73,7 @@ class MoodViewController: UIViewController {
         }
         
         switch identifier {
-        case "unwind from save":
+        case "unwind from submit":
             let newMood: MoodEntry.Mood = detailedEntryViewController.mood
             let newDate: Date = detailedEntryViewController.date
             if detailedEntryViewController.isEditingEntry {
@@ -92,6 +83,7 @@ class MoodViewController: UIViewController {
                 updateEntry(mood: newMood, date: newDate, at: selectedIndexPath.row)
             } else {
                 createEntry(mood: newMood, date: newDate)
+                print("new Entry created")
             }
 //        case "unwind from cancel":
 //            print("from cancel button")

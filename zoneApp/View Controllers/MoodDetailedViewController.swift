@@ -63,7 +63,7 @@ class MoodDetailedViewController: UIViewController {
     
     
     @IBAction func pressSubmit(_ sender: Any) {
-        performSegue(withIdentifier: "unwind from save", sender: nil)
+        performSegue(withIdentifier: "unwind from submit", sender: nil)
     }
     
     
