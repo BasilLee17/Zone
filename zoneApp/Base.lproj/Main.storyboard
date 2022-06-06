@@ -436,7 +436,6 @@
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="pressSubmit:" destination="Pe6-lV-j8Y" eventType="touchUpInside" id="tJR-Hm-8dZ"/>
                                     <segue destination="SNc-uk-p0p" kind="unwind" identifier="unwind from submit" unwindAction="unwindToHome:" id="Koq-1k-IRt"/>
                                 </connections>
                             </button>

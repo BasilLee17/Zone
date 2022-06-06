@@ -83,7 +83,6 @@ class MoodViewController: UIViewController {
                 updateEntry(mood: newMood, date: newDate, at: selectedIndexPath.row)
             } else {
                 createEntry(mood: newMood, date: newDate)
-                print("new Entry created")
             }
 //        case "unwind from cancel":
 //            print("from cancel button")

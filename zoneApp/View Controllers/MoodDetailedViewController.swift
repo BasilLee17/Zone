@@ -61,13 +61,6 @@ class MoodDetailedViewController: UIViewController {
         mood = newMood
     }
     
-    
-    @IBAction func pressSubmit(_ sender: Any) {
-        performSegue(withIdentifier: "unwind from submit", sender: nil)
-    }
-    
-    
-    
     @IBOutlet weak var happyMoodBtn: UIButton!
     @IBOutlet weak var goodMoodBtn: UIButton!
     @IBOutlet weak var mehMoodBtn: UIButton!
