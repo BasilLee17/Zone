@@ -40,7 +40,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func setCellsView()
     {
-        let width = (collectionView.frame.size.width - 2) / 8
+        let width = (collectionView.frame.size.width - 2) / 7
         let height = (collectionView.frame.size.height - 2) / 8
         
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -62,9 +62,9 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
         
-        var count: Int = 1
+        var count: Int = 0
         
-        while(count <= 42)
+        while(count < 42)
         {
             if(count <= startingSpaces || count - startingSpaces > daysInMonth)
             {
@@ -130,6 +130,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
 //        print("number: \(totalSquares[indexPath.item])")
         cell.isUserInteractionEnabled = true
+        cell.layoutIfNeeded()
         
         return cell
     }
