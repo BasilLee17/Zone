@@ -10,7 +10,11 @@ import UIKit
 var selectedDate = Date()
 var selectedDay = Date()
 var dayReview = ""
-var moodHistory = [["date": "June 6, 2022", "mood": "1"], ["date": "June 12, 2022", "mood": "5"], ["date": "June 12, 2022", "mood": "5"]]
+var moodHistory = [
+    ["date": "June 6, 2022", "mood": "1", "dayOfMonth": "6", "month": "June 2022"],
+    ["date": "June 12, 2022", "mood": "5", "dayOfMonth": "12", "month": "June 2022"],
+    ["date": "June 27, 2022", "mood": "5", "dayOfMonth": "27", "month": "June 2022"]
+]
 var dateEntry: [String:String] = [:]
 
 class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -92,11 +96,46 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
         
         cell.dayOfMonth.setTitle("\(totalSquares[indexPath.item])", for: .normal)
+        cell.moodEmoji.text = "🫥"
+        cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
+        if totalSquares[indexPath.item] != "" {
+//            let currentMonth = monthLabel.text
+            for mood in moodHistory {
+//                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
+//                print("mood month: \(mood["month"])")
+//                print("month label: \(String(describing: monthLabel.text))")
+                if mood["dayOfMonth"]! == totalSquares[indexPath.item] && mood["month"] == monthLabel.text {
+                    print("day: \(String(describing: mood["dayOfMonth"]!))")
+                    print("squares: \(totalSquares[indexPath.item])")
+                    switch mood["mood"] {
+                    case "1":
+                        cell.moodEmoji.text = "😭"
+                    case "2":
+                        cell.moodEmoji.text = "😔"
+                    case "3":
+                        cell.moodEmoji.text = "😐"
+                    case "4":
+                        cell.moodEmoji.text = "🙂"
+                    case "5":
+                        cell.moodEmoji.text = "😄"
+                    default:
+                        cell.moodEmoji.text = ""
+                    }
+                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
+                }
+            }
+        } else {
+            cell.moodEmoji.text = ""
+        }
         
 //        print("number: \(totalSquares[indexPath.item])")
         cell.isUserInteractionEnabled = true
         
         return cell
+    }
+    
+    func findMoodEmoji() {
+        var count: Int = 0
     }
     
     private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

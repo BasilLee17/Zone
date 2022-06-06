@@ -366,6 +366,7 @@
 				CODE_SIGN_ENTITLEMENTS = zoneApp/zoneApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HWH8998P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = zoneApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -395,6 +396,7 @@
 				CODE_SIGN_ENTITLEMENTS = zoneApp/zoneApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HWH8998P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = zoneApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
