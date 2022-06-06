@@ -52,7 +52,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         totalSquares.removeAll()
         
         let formatter = DateFormatter()
-//        formatter.dateStyle = .short
+        formatter.dateStyle = .short
         let date = formatter.string(from: selectedDate)
         print("selectedDate: \(selectedDate)")
         print("typeof: \(type(of: selectedDate.description)) \(type(of: selectedDate))")
@@ -170,10 +170,22 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier
         {
-        case Optional("fromFirstToSecond"):
+        case Optional("toJournalView"):
+            print("Going from first to second")
+            let secondVC = segue.destination as!
+            JournalViewController
+            break;
+        case Optional("toDayView"):
             print("Going from first to second")
             let secondVC = segue.destination as!
             DayViewController
+            secondVC.message = "Howdy from First"
+            secondVC.day = ""
+            break;
+        case Optional("toWeeklyView"):
+            print("Going from first to second")
+            let secondVC = segue.destination as!
+            WeeklyViewController
             secondVC.message = "Howdy from First"
             secondVC.day = ""
             break;

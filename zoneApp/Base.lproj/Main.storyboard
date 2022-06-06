@@ -281,7 +281,7 @@
                                                             <buttonConfiguration key="configuration" style="plain" title="1"/>
                                                             <connections>
                                                                 <action selector="dayTouchUpInside:" destination="VIz-QZ-Sei" eventType="touchUpInside" id="MKi-7H-OP3"/>
-                                                                <segue destination="ccJ-19-ZuS" kind="show" id="LXZ-j6-H8o"/>
+                                                                <segue destination="ccJ-19-ZuS" kind="show" identifier="toDayView" id="LXZ-j6-H8o"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO5-hc-jw5">
@@ -308,7 +308,7 @@
                                         <connections>
                                             <outlet property="dayOfMonth" destination="NuJ-Wf-Nue" id="dki-Ai-7cZ"/>
                                             <outlet property="moodEmoji" destination="hO5-hc-jw5" id="6vE-Zq-VCW"/>
-                                            <segue destination="ccJ-19-ZuS" kind="show" id="XrP-5j-rai"/>
+                                            <segue destination="ccJ-19-ZuS" kind="show" identifier="toDayView" id="XrP-5j-rai"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -321,7 +321,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Weekly"/>
                                 <connections>
-                                    <segue destination="qKP-DO-g2X" kind="show" id="2TG-qf-v3c"/>
+                                    <segue destination="G2T-R4-Z1I" kind="show" identifier="toWeeklyView" id="3ys-Oo-lqL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ce-Cn-zzg">
@@ -329,7 +329,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Journal"/>
                                 <connections>
-                                    <segue destination="u6P-25-eIX" kind="show" id="ubw-ui-e0n"/>
+                                    <segue destination="u6P-25-eIX" kind="show" identifier="toJournalView" id="ubw-ui-e0n"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -562,51 +562,10 @@
             </objects>
             <point key="canvasLocation" x="-164" y="1262"/>
         </scene>
-        <!--Day View Controller-->
-        <scene sceneID="mgu-Jz-OPq">
-            <objects>
-                <viewController id="qKP-DO-g2X" customClass="DayViewController" customModule="zoneApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dlm-tQ-JM0">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKw-Tc-HTJ">
-                                <rect key="frame" x="31.666666666666671" y="50.000000000000007" width="37" height="31.333333333333336"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
-                                <connections>
-                                    <action selector="backPressed:" destination="qKP-DO-g2X" eventType="touchUpInside" id="xKE-8S-hsF"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjK-oT-Dsm">
-                                <rect key="frame" x="160" y="50" width="108" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ncM-RM-xIs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="MjK-oT-Dsm" firstAttribute="top" secondItem="dlm-tQ-JM0" secondAttribute="top" constant="50" id="K0N-Ew-nke"/>
-                            <constraint firstItem="zKw-Tc-HTJ" firstAttribute="top" secondItem="dlm-tQ-JM0" secondAttribute="top" constant="50" id="RuY-6m-Oh6"/>
-                            <constraint firstItem="MjK-oT-Dsm" firstAttribute="centerX" secondItem="dlm-tQ-JM0" secondAttribute="centerX" id="c8I-I4-iEX"/>
-                            <constraint firstItem="zKw-Tc-HTJ" firstAttribute="centerX" secondItem="dlm-tQ-JM0" secondAttribute="leading" constant="50" id="tZI-m1-k9F"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="TLo-ir-Dp5"/>
-                    <connections>
-                        <outlet property="DateLabel" destination="MjK-oT-Dsm" id="yYd-2F-9dc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e0m-UN-Zl6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="604" y="1091"/>
-        </scene>
-        <!--Day View Controller-->
+        <!--Journal View Controller-->
         <scene sceneID="KPx-WW-UH3">
             <objects>
-                <viewController id="u6P-25-eIX" customClass="DayViewController" customModule="zoneApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u6P-25-eIX" customClass="JournalViewController" customModule="zoneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ATz-qJ-J7s">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -644,9 +603,67 @@
             </objects>
             <point key="canvasLocation" x="583" y="403"/>
         </scene>
+        <!--Weekly View Controller-->
+        <scene sceneID="Z1I-Wb-wMs">
+            <objects>
+                <viewController id="G2T-R4-Z1I" customClass="WeeklyViewController" customModule="zoneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pBb-nh-BPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LF2-Lr-y9e">
+                                <rect key="frame" x="31.666666666666671" y="50.000000000000007" width="37" height="31.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="G2T-R4-Z1I" eventType="touchUpInside" id="22b-pH-KBj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0p-HH-qGy">
+                                <rect key="frame" x="176" y="50" width="76.333333333333314" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpd-Tu-jrY">
+                                <rect key="frame" x="115.99999999999999" y="49.999999999999993" width="46.333333333333329" height="30.666666666666664"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward.fill" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="previousMonth:" destination="VIz-QZ-Sei" eventType="touchUpInside" id="BQI-Up-IFM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK3-cx-If5">
+                                <rect key="frame" x="266" y="49.999999999999993" width="46.333333333333314" height="30.666666666666664"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="nextMonth:" destination="VIz-QZ-Sei" eventType="touchUpInside" id="NrZ-cQ-i62"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2cG-G8-SQc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PK3-cx-If5" firstAttribute="top" secondItem="pBb-nh-BPJ" secondAttribute="top" constant="50" id="6KL-zb-tHC"/>
+                            <constraint firstItem="e0p-HH-qGy" firstAttribute="top" secondItem="pBb-nh-BPJ" secondAttribute="top" constant="50" id="Dnb-bk-EKt"/>
+                            <constraint firstItem="mpd-Tu-jrY" firstAttribute="top" secondItem="pBb-nh-BPJ" secondAttribute="top" constant="50" id="Fw1-h5-9To"/>
+                            <constraint firstItem="mpd-Tu-jrY" firstAttribute="centerX" secondItem="pBb-nh-BPJ" secondAttribute="centerX" constant="-75" id="IX4-aS-GrL"/>
+                            <constraint firstItem="PK3-cx-If5" firstAttribute="centerX" secondItem="pBb-nh-BPJ" secondAttribute="centerX" constant="75" id="VXx-L1-nmY"/>
+                            <constraint firstItem="LF2-Lr-y9e" firstAttribute="centerX" secondItem="pBb-nh-BPJ" secondAttribute="leading" constant="50" id="d8M-BQ-jpC"/>
+                            <constraint firstItem="LF2-Lr-y9e" firstAttribute="top" secondItem="pBb-nh-BPJ" secondAttribute="top" constant="50" id="fw8-cr-5Oq"/>
+                            <constraint firstItem="e0p-HH-qGy" firstAttribute="centerX" secondItem="pBb-nh-BPJ" secondAttribute="centerX" id="p58-aO-33Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZdJ-Ni-84b"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZmS-CK-V2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="1062"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XrP-5j-rai"/>
+        <segue reference="LXZ-j6-H8o"/>
         <segue reference="jIb-rd-DTl"/>
     </inferredMetricsTieBreakers>
     <resources>
