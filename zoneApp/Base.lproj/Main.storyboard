@@ -284,7 +284,7 @@
                                                                 <segue destination="ccJ-19-ZuS" kind="show" identifier="toDayView" id="LXZ-j6-H8o"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO5-hc-jw5">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO5-hc-jw5">
                                                             <rect key="frame" x="0.0" y="30.666666666666671" width="64" height="20.333333333333329"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20.333333333333329" id="10i-hL-1qH"/>
@@ -294,6 +294,10 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="hO5-hc-jw5" firstAttribute="centerX" secondItem="NuJ-Wf-Nue" secondAttribute="centerX" id="Ay2-a0-pCU"/>
+                                                        <constraint firstItem="hO5-hc-jw5" firstAttribute="centerY" secondItem="NuJ-Wf-Nue" secondAttribute="centerY" constant="25.5" id="Pee-lX-lz1"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>

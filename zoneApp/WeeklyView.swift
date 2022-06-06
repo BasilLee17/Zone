@@ -39,6 +39,13 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     func setWeekView()
     {
         totalSquares.removeAll()
+        var current = CalendarHelper().sundayForDate(date: selectedDate)
+        let nextSunday = CalendarHelper().addDays(date: current, days: 7)
+        
+        while current < nextSunday {
+            totalSquares.append(current)
+            current = CalendarHelper().addDays(date: current, days: 1)
+        }
         
         let formatter = DateFormatter()
         formatter.dateStyle = .short
@@ -67,7 +74,14 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         cell.dayOfMonth.setTitle(String(CalendarHelper().dayOfMonth(date: date)), for: .normal)
         cell.moodEmoji.text = "🫥"
-        cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
+//        cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
+        
+        if date == selectedDate {
+            cell.backgroundColor = UIColor.systemGreen
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
+        
 //        if totalSquares[indexPath.item] != "" {
 ////            let currentMonth = monthLabel.text
 //            for mood in moodHistory {
@@ -99,10 +113,15 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
 //        }
         
 //        print("number: \(totalSquares[indexPath.item])")
-        cell.isUserInteractionEnabled = true
-        cell.layoutIfNeeded()
+//        cell.isUserInteractionEnabled = true
+//        cell.layoutIfNeeded()
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedDate = totalSquares[indexPath.item]
+        collectionView.reloadData()
     }
     
     private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
