@@ -15,7 +15,7 @@ var moodHistory = [
     ["date": "June 12, 2022", "mood": "5", "dayOfMonth": "12", "month": "June 2022"],
     ["date": "June 27, 2022", "mood": "5", "dayOfMonth": "27", "month": "June 2022"]
 ]
-var dateEntry: [String:String] = [:]
+//var dateEntry: [String:String] = [:]
 
 class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -217,7 +217,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
             let secondVC = segue.destination as!
             DayViewController
             secondVC.message = "Howdy from First"
-            secondVC.day = ""
+            secondVC.day = dayReview
             break;
         case Optional("toWeeklyView"):
             print("Going from first to second")
@@ -245,16 +245,18 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let alertController = UIAlertController(title: "uh oh...", message: "You don't have any activity on \(String(describing: dayReview))", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)
         
-        for entry in moodHistory {
-            if entry["date"] == dayReview {
-                dateEntry = entry
-                print("matched date: \(String(describing: entry["date"]!))")
+        for entry in moodEntries {
+            print("entry date: \(entry.date)")
+            print("day review: \(dayReview)")
+            if entry.monthDayYear == dayReview {
+//                dateEntry = entry.date
+                print("matched date: \(String(describing: entry.date))")
             }
         }
-        if dateEntry == [:] {
-//            dateEntry = ["date": dayReview, "mood": "0"]
-            alertController.addAction(OKAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
+//        if dateEntry == [:] {
+////            dateEntry = ["date": dayReview, "mood": "0"]
+//            alertController.addAction(OKAction)
+//            self.present(alertController, animated: true, completion: nil)
+//        }
     }
 }

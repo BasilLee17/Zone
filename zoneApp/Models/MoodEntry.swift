@@ -18,6 +18,10 @@ struct MoodEntry{
         return CalendarHelper().monthAndYear(date: date)
     }
     
+    var monthDayYear: String {
+        return CalendarHelper().monthDayYear(date: date)
+    }
+    
     
     public func setDayOfMonth(_ enteredDate: Date) -> String {
         return String(describing: CalendarHelper().dayOfMonth(date: enteredDate))

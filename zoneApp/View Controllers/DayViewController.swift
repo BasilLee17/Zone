@@ -17,7 +17,7 @@ class DayViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        if dateEntry["mood"] != "0" {
+        if day != "" {
             setDay()
         } else {
             setError()
@@ -25,16 +25,15 @@ class DayViewController: UIViewController {
     }
     
     func setDay() {
-        DateLabel.text = dateEntry["date"]
+        DateLabel.text = day
     }
     
     func setError() {
-        DateLabel.text = "You have no activity for \(String(describing: dateEntry["date"]!))"
+        DateLabel.text = "You have no activity for \(day)"
     }
     
     @IBAction func backPressed(_ sender: Any) {
         print("Dismiss was pressed")
-        dateEntry = [:]
         self.dismiss(animated: true)
     }
 }

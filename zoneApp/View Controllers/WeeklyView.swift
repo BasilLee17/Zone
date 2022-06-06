@@ -150,7 +150,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         for entry in moodHistory {
             if entry["date"] == dayReview {
-                dateEntry = entry
+//                dateEntry = entry
                 print("matched date: \(String(describing: entry["date"]!))")
             }
         }

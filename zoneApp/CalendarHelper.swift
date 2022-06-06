@@ -73,6 +73,10 @@ class CalendarHelper
         return "\(monthString(date: date)) \(yearString(date: date))"
     }
     
+    func monthDayYear(date: Date) -> String {
+        return "\(monthString(date: date)) \(dayOfMonth(date: date)), \(yearString(date: date))"
+    }
+    
     func firstOfMonth(date: Date) -> Date
     {
         let components = calendar.dateComponents([.year, .month], from: date)
