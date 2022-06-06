@@ -135,13 +135,15 @@ extension MeditateViewController {
         stackView.alignment = .center
 
         connectLabel.translatesAutoresizingMaskIntoConstraints = false
-        connectLabel.text = "Connect your Spotify account"
+        connectLabel.text = "Meditate with Music"
         connectLabel.font = UIFont.preferredFont(forTextStyle: .title3)
         connectLabel.textColor = .systemGreen
 
         connectButton.translatesAutoresizingMaskIntoConstraints = false
         connectButton.configuration = .filled()
-        connectButton.setTitle("Continue with Spotify", for: [])
+//        connectButton.layer.cornerRadius = connectButton.frame.width / 2
+//        connectButton.layer.masksToBounds = true
+        connectButton.setTitle("Start Meditation", for: [])
         connectButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
         connectButton.addTarget(self, action: #selector(didTapConnect), for: .primaryActionTriggered)
 
