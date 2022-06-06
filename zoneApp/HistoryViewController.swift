@@ -186,8 +186,6 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
             print("Going from first to second")
             let secondVC = segue.destination as!
             WeeklyViewController
-            secondVC.message = "Howdy from First"
-            secondVC.day = ""
             break;
         default:
             print("I have no idea what segue you're using")
