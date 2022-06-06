@@ -36,11 +36,12 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         setCellsView()
         setMonthView()
+//        print("moodEntry string value: \(moodEntries[0].mood) \(moodEntries[0].dayOfMonth)")
     }
     
     func setCellsView()
     {
-        let width = (collectionView.frame.size.width - 2) / 7
+        let width = (collectionView.frame.size.width - 2) / 8
         let height = (collectionView.frame.size.height - 2) / 8
         
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -98,29 +99,65 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.dayOfMonth.setTitle("\(totalSquares[indexPath.item])", for: .normal)
         cell.moodEmoji.text = "🫥"
         cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
+        print("num square: \(totalSquares[indexPath.item])")
         if totalSquares[indexPath.item] != "" {
 //            let currentMonth = monthLabel.text
-            for mood in moodHistory {
+//            for mood in moodHistory {
+////                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
+////                print("mood month: \(mood["month"])")
+////                print("month label: \(String(describing: monthLabel.text))")
+//                if mood["dayOfMonth"]! == totalSquares[indexPath.item] && mood["month"] == monthLabel.text {
+//                    print("day: \(String(describing: mood["dayOfMonth"]!))")
+//                    print("squares: \(totalSquares[indexPath.item])")
+//                    switch mood["mood"] {
+//                    case "1":
+//                        cell.moodEmoji.text = "😭"
+//                    case "2":
+//                        cell.moodEmoji.text = "😔"
+//                    case "3":
+//                        cell.moodEmoji.text = "😐"
+//                    case "4":
+//                        cell.moodEmoji.text = "🙂"
+//                    case "5":
+//                        cell.moodEmoji.text = "😄"
+//                    default:
+//                        cell.moodEmoji.text = ""
+//                    }
+//                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
+//                }
+//            }
+            
+            for entry in moodEntries {
 //                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
 //                print("mood month: \(mood["month"])")
 //                print("month label: \(String(describing: monthLabel.text))")
-                if mood["dayOfMonth"]! == totalSquares[indexPath.item] && mood["month"] == monthLabel.text {
-                    print("day: \(String(describing: mood["dayOfMonth"]!))")
-                    print("squares: \(totalSquares[indexPath.item])")
-                    switch mood["mood"] {
-                    case "1":
-                        cell.moodEmoji.text = "😭"
-                    case "2":
-                        cell.moodEmoji.text = "😔"
-                    case "3":
-                        cell.moodEmoji.text = "😐"
-                    case "4":
-                        cell.moodEmoji.text = "🙂"
-                    case "5":
-                        cell.moodEmoji.text = "😄"
-                    default:
-                        cell.moodEmoji.text = ""
-                    }
+                print("struct day type: \(type(of: entry.dayOfMonth))")
+                print("totalSq num type: \(type(of: totalSquares[indexPath.item]))")
+                print("squares: \(totalSquares[indexPath.item])")
+                print("day: \(String(describing: entry.dayOfMonth))")
+                
+                print("struct month type: \(type(of: entry.month))")
+                print("entry month: \(entry.month)")
+                
+                print("month label type: \(type(of: monthLabel.text!))")
+                print("label: \(monthLabel.text!)")
+                if entry.dayOfMonth == totalSquares[indexPath.item] && entry.month == monthLabel.text! {
+//                    switch mood["mood"] {
+//                    case "1":
+//                        cell.moodEmoji.text = "😭"
+//                    case "2":
+//                        cell.moodEmoji.text = "😔"
+//                    case "3":
+//                        cell.moodEmoji.text = "😐"
+//                    case "4":
+//                        cell.moodEmoji.text = "🙂"
+//                    case "5":
+//                        cell.moodEmoji.text = "😄"
+//                    default:
+//                        cell.moodEmoji.text = ""
+//                    }
+                    cell.moodEmoji.text = entry.mood.stringEmoji
+                    print("emoji: \(entry.mood.stringEmoji)")
                     cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
                 }
             }
@@ -209,7 +246,6 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let OKAction = UIAlertAction(title: "OK", style: .default)
         
         for entry in moodHistory {
-            print("entry: \(entry)")
             if entry["date"] == dayReview {
                 dateEntry = entry
                 print("matched date: \(String(describing: entry["date"]!))")
@@ -219,7 +255,6 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
 //            dateEntry = ["date": dayReview, "mood": "0"]
             alertController.addAction(OKAction)
             self.present(alertController, animated: true, completion: nil)
-            print("no match: \(String(describing: dayReview))")
         }
     }
 }

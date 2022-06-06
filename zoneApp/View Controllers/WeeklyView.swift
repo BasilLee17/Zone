@@ -7,10 +7,22 @@
 
 import UIKit
 
-class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Event().eventsForDate(date: selectedDate).count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! EventCell
+        let event = Event().eventsForDate(date: selectedDate)[indexPath.row]
+        cell.eventLabel.text = event.name + " " + CalendarHelper().timeString(date: event.date)
+        return cell
+    }
+    
     
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     var totalSquares = [Date]()
 //    let tapGesture = UITapGestureRecognizer(target: HistoryViewController.self, action: #selector(tappedLabel(tapGestureRecognizer:)))
@@ -56,6 +68,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
             + " " + CalendarHelper().yearString(date: selectedDate)
         
         collectionView.reloadData()
+        tableView.reloadData()
     }
     
     
@@ -72,7 +85,8 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let date = totalSquares[indexPath.item]
         
-        cell.dayOfMonth.setTitle(String(CalendarHelper().dayOfMonth(date: date)), for: .normal)
+//        cell.dayOfMonth.setTitle(, for: .normal)
+        cell.weekDayOfMonth.text = String(CalendarHelper().dayOfMonth(date: date))
         cell.moodEmoji.text = "🫥"
 //        cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
         
@@ -81,47 +95,17 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         } else {
             cell.backgroundColor = UIColor.white
         }
-        
-//        if totalSquares[indexPath.item] != "" {
-////            let currentMonth = monthLabel.text
-//            for mood in moodHistory {
-////                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
-////                print("mood month: \(mood["month"])")
-////                print("month label: \(String(describing: monthLabel.text))")
-//                if mood["dayOfMonth"]! == totalSquares[indexPath.item] && mood["month"] == weekLabel.text {
-//                    print("day: \(String(describing: mood["dayOfMonth"]!))")
-//                    print("squares: \(totalSquares[indexPath.item])")
-//                    switch mood["mood"] {
-//                    case "1":
-//                        cell.moodEmoji.text = "😭"
-//                    case "2":
-//                        cell.moodEmoji.text = "😔"
-//                    case "3":
-//                        cell.moodEmoji.text = "😐"
-//                    case "4":
-//                        cell.moodEmoji.text = "🙂"
-//                    case "5":
-//                        cell.moodEmoji.text = "😄"
-//                    default:
-//                        cell.moodEmoji.text = ""
-//                    }
-//                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
-//                }
-//            }
-//        } else {
-//            cell.moodEmoji.text = ""
-//        }
-        
-//        print("number: \(totalSquares[indexPath.item])")
-//        cell.isUserInteractionEnabled = true
-//        cell.layoutIfNeeded()
+//        print("date: \(date)")
+//        print("sel date: \(selectedDate)")
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedDate = totalSquares[indexPath.item]
+        print("sel date: \(selectedDate)")
         collectionView.reloadData()
+        tableView.reloadData()
     }
     
     private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -164,25 +148,20 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         dayReview = "\(String(describing: month)) \(String(describing: dayValue!)), \(year)"
         print("full date: \(dayReview)")
         
-        let alertController = UIAlertController(title: "uh oh...", message: "You don't have any activity on \(String(describing: dayReview))", preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default)
-        
         for entry in moodHistory {
-            print("entry: \(entry)")
             if entry["date"] == dayReview {
                 dateEntry = entry
                 print("matched date: \(String(describing: entry["date"]!))")
             }
         }
-        if dateEntry == [:] {
-//            dateEntry = ["date": dayReview, "mood": "0"]
-            alertController.addAction(OKAction)
-            self.present(alertController, animated: true, completion: nil)
-            print("no match: \(String(describing: dayReview))")
-        }
     }
     @IBAction func backPressed(_ sender: Any) {
         print("Dismiss was pressed")
         self.dismiss(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 }

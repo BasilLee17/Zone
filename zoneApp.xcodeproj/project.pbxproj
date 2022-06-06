@@ -23,6 +23,8 @@
 		CACC94ED284484DE000590FB /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC94EC284484DE000590FB /* MoodViewController.swift */; };
 		CACC94EF2844851C000590FB /* MeditateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC94EE2844851C000590FB /* MeditateViewController.swift */; };
 		CACC94F128448557000590FB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC94F028448557000590FB /* HistoryViewController.swift */; };
+		DB1D3FA5284E4028009239F6 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D3FA4284E4028009239F6 /* EventCell.swift */; };
+		DB1D3FA7284E4167009239F6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D3FA6284E4167009239F6 /* Event.swift */; };
 		DBB76A9D284717AD007DBA06 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB76A9C284717AD007DBA06 /* CalendarCell.swift */; };
 		DBB76A9F28471C96007DBA06 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB76A9E28471C96007DBA06 /* CalendarHelper.swift */; };
 		DBB76AA12847A98C007DBA06 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB76AA02847A98C007DBA06 /* DayViewController.swift */; };
@@ -50,6 +52,8 @@
 		CACC94EC284484DE000590FB /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		CACC94EE2844851C000590FB /* MeditateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditateViewController.swift; sourceTree = "<group>"; };
 		CACC94F028448557000590FB /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		DB1D3FA4284E4028009239F6 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		DB1D3FA6284E4167009239F6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DBB76A9C284717AD007DBA06 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		DBB76A9E28471C96007DBA06 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		DBB76AA02847A98C007DBA06 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,10 @@
 				7C3327D5284D13A400C74B3A /* MoodEntryTableViewCell.swift */,
 				7C3327D1284CA50A00C74B3A /* MoodDetailedViewController.swift */,
 				CACC94EC284484DE000590FB /* MoodViewController.swift */,
+				DBF0696C284E20AC00C9E9B6 /* JournalViewController.swift */,
+				CACC94F028448557000590FB /* HistoryViewController.swift */,
+				DBB76AA02847A98C007DBA06 /* DayViewController.swift */,
+				DBF0696A284E192700C9E9B6 /* WeeklyView.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -124,16 +132,14 @@
 				CA1BA959284042C8001E112D /* AppDelegate.swift */,
 				CA1BA95B284042C8001E112D /* SceneDelegate.swift */,
 				CA1BA95F284042C8001E112D /* Main.storyboard */,
-				DBF0696C284E20AC00C9E9B6 /* JournalViewController.swift */,
 				DBB76A9E28471C96007DBA06 /* CalendarHelper.swift */,
+				DB1D3FA6284E4167009239F6 /* Event.swift */,
 				DBB76A9C284717AD007DBA06 /* CalendarCell.swift */,
+				DB1D3FA4284E4028009239F6 /* EventCell.swift */,
 				CA1BA962284042CD001E112D /* Assets.xcassets */,
 				CA1BA964284042CD001E112D /* LaunchScreen.storyboard */,
 				CA1BA967284042CD001E112D /* Info.plist */,
 				CACC94EE2844851C000590FB /* MeditateViewController.swift */,
-				CACC94F028448557000590FB /* HistoryViewController.swift */,
-				DBB76AA02847A98C007DBA06 /* DayViewController.swift */,
-				DBF0696A284E192700C9E9B6 /* WeeklyView.swift */,
 			);
 			path = zoneApp;
 			sourceTree = "<group>";
@@ -213,10 +219,12 @@
 				DBB76A9D284717AD007DBA06 /* CalendarCell.swift in Sources */,
 				CACC94ED284484DE000590FB /* MoodViewController.swift in Sources */,
 				CA1BA95A284042C8001E112D /* AppDelegate.swift in Sources */,
+				DB1D3FA7284E4167009239F6 /* Event.swift in Sources */,
 				7C3327D2284CA50A00C74B3A /* MoodDetailedViewController.swift in Sources */,
 				7C3327D6284D13A400C74B3A /* MoodEntryTableViewCell.swift in Sources */,
 				7C3327C8284C81EB00C74B3A /* Mood.swift in Sources */,
 				7C3327DA284D6BD000C74B3A /* userNotification.swift in Sources */,
+				DB1D3FA5284E4028009239F6 /* EventCell.swift in Sources */,
 				CACC94F128448557000590FB /* HistoryViewController.swift in Sources */,
 				DBF0696B284E192700C9E9B6 /* WeeklyView.swift in Sources */,
 				DBF0696D284E20AC00C9E9B6 /* JournalViewController.swift in Sources */,
