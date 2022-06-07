@@ -9,19 +9,20 @@ import UIKit
 
 class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Event().eventsForDate(date: selectedDate).count
+        print("count of events: \(eventsList.count)")
+        print("count of array: \(Event().eventsForDate(date: selectedDate).count)")
+        return eventsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! EventCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! EventCell
         print("selected Date: \(selectedDate)")
-        let event = Event().eventsForDate(date: selectedDate)[indexPath.row]
         print("indexPath: \(indexPath.row)")
-        print("event: \(String(describing: event.date))")
-        cell.date.text = event.date
-        cell.name.text = event.name
-        cell.emoji.text = event.emoji
-        cell.time.text = event.time
+        print("event date: \(String(describing: eventsList[indexPath.row].date))")
+        cell.date!.text = eventsList[indexPath.row].date
+        cell.name!.text = eventsList[indexPath.row].name
+        cell.emoji!.text = eventsList[indexPath.row].emoji
+        cell.time!.text = eventsList[indexPath.row].time
         
         return cell
     }
@@ -80,8 +81,9 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         tableView.reloadData()
     }
     
-    func setEvents() {
-        
+    func setEvents() -> [Event] {
+        eventsList = Event().eventsForDate(date: selectedDate)
+        return eventsList
     }
     
     
@@ -105,8 +107,8 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
 //        cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
         
         
-        print("formattedDate type: \(type(of: formattedDate))")
-        print("label: \(formattedDate)")
+//        print("formattedDate type: \(type(of: formattedDate))")
+//        print("label: \(formattedDate)")
         if formattedDate != "" {
             for entry in moodEntries {
 //                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
@@ -148,6 +150,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         print("sel date: \(selDate)")
         collectionView.reloadData()
         tableView.reloadData()
+        setEvents()
     }
     
     private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

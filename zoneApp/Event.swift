@@ -7,7 +7,7 @@
 
 import Foundation
 
-var eventsList = [Event]()
+var eventsList: [Event] = []
 
 class Event {
     var id: Int!
@@ -27,18 +27,19 @@ class Event {
         for entry in moodEntries {
             var event = Event()
             if entry.monthDayYear == monthDay {
-                self.fullDate = date
-                self.date = entry.monthDayYear
-                self.name = String(describing: entry.mood.stringValue)
-                self.emoji = entry.mood.stringEmoji
-                self.time = CalendarHelper().timeString(date: entry.date)
-                print("self name: \(String(describing: self.name) )")
-                daysEvents.append(event)
+                event.fullDate = date
+                event.date = entry.monthDayYear
+                event.name = String(describing: entry.mood.stringValue)
+                event.emoji = entry.mood.stringEmoji
+                event.time = CalendarHelper().timeString(date: entry.date)
+                print("self name: \(String(describing: event.name!) )")
                 print("appending: \(daysEvents.count)")
-            } else {
-                break
+                daysEvents.append(event)
             }
         }
+        print("dayOfEvents: \(daysEvents.count)")
+        print("self date: \(daysEvents[0].date!)")
+        print("name: \(daysEvents[0].emoji!)")
 //        for event in eventsList {
 //            if Calendar.current.isDate(event.date, inSameDayAs: date) {
 //                daysEvents.append(event)
@@ -46,4 +47,8 @@ class Event {
 //        }
         return daysEvents
     }
+    
+//    func eventsInList(date: Date) -> {
+//
+//    }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct MoodEntry{
+struct MoodEntry {
     var mood: Mood
     var date: Date
     var dayOfMonth: String {
