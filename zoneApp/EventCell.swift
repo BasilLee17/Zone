@@ -9,5 +9,8 @@ import UIKit
 
 class EventCell: UITableViewCell {
     
-    @IBOutlet weak var eventLabel: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var emoji: UILabel!
+    @IBOutlet weak var time: UILabel!
 }

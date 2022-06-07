@@ -14,8 +14,15 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! EventCell
+        print("selected Date: \(selectedDate)")
         let event = Event().eventsForDate(date: selectedDate)[indexPath.row]
-        cell.eventLabel.text = event.name + " " + CalendarHelper().timeString(date: event.date)
+        print("indexPath: \(indexPath.row)")
+        print("event: \(String(describing: event.date))")
+        cell.date.text = event.date
+        cell.name.text = event.name
+        cell.emoji.text = event.emoji
+        cell.time.text = event.time
+        
         return cell
     }
     
@@ -38,6 +45,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
         setCellsView()
         setWeekView()
+        setEvents()
     }
     
     func setCellsView()
@@ -70,6 +78,10 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         collectionView.reloadData()
         tableView.reloadData()
+    }
+    
+    func setEvents() {
+        
     }
     
     
@@ -189,6 +201,12 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         print("Dismiss was pressed")
         self.dismiss(animated: true)
     }
+    
+//    override func viewDidAppear(_ animated: Bool)
+//    {
+//        super.viewDidAppear(animated)
+//        tableView.reloadData()
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

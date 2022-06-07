@@ -761,28 +761,58 @@
                                 <rect key="frame" x="0.0" y="385.66666666666674" width="428" height="486.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" id="1C0-D5-8pw" customClass="EventCell">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" id="1C0-D5-8pw" customClass="EventCell" customModule="zoneApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="44.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1C0-D5-8pw" id="86E-O4-4Jb">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="44.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRJ-JF-xbH">
-                                                    <rect key="frame" x="19.999999999999996" y="11.666666666666666" width="42.666666666666657" height="20.333333333333336"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRJ-JF-xbH">
+                                                    <rect key="frame" x="20" y="12.333333333333334" width="36" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8Y-26-lMx">
+                                                    <rect key="frame" x="127.33333333333333" y="12.000000000000002" width="42.333333333333329" height="20.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🫥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh2-dW-tL2">
+                                                    <rect key="frame" x="232" y="11.999999999999998" width="23" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pY-OM-Dte">
+                                                    <rect key="frame" x="366.33333333333331" y="11.999999999999998" width="37.666666666666686" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="2pY-OM-Dte" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dh2-dW-tL2" secondAttribute="trailing" constant="8" symbolic="YES" id="00u-LP-j5a"/>
+                                                <constraint firstItem="Q8Y-26-lMx" firstAttribute="centerY" secondItem="XRJ-JF-xbH" secondAttribute="centerY" id="17Q-Xn-eGp"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q8Y-26-lMx" secondAttribute="trailing" constant="20" symbolic="YES" id="DK3-Dj-7fB"/>
                                                 <constraint firstItem="XRJ-JF-xbH" firstAttribute="centerY" secondItem="86E-O4-4Jb" secondAttribute="centerY" id="EuS-gB-zKT"/>
+                                                <constraint firstItem="2pY-OM-Dte" firstAttribute="baseline" secondItem="dh2-dW-tL2" secondAttribute="baseline" id="LPc-dC-9d8"/>
+                                                <constraint firstItem="2pY-OM-Dte" firstAttribute="firstBaseline" secondItem="Q8Y-26-lMx" secondAttribute="firstBaseline" id="QPj-O8-lir"/>
                                                 <constraint firstItem="XRJ-JF-xbH" firstAttribute="leading" secondItem="86E-O4-4Jb" secondAttribute="leading" constant="20" symbolic="YES" id="QTx-WY-BNW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2pY-OM-Dte" secondAttribute="trailing" constant="4" id="WG1-Q2-jal"/>
+                                                <constraint firstItem="Q8Y-26-lMx" firstAttribute="top" secondItem="86E-O4-4Jb" secondAttribute="topMargin" constant="1" id="luL-DQ-xhN"/>
+                                                <constraint firstItem="dh2-dW-tL2" firstAttribute="leading" secondItem="Q8Y-26-lMx" secondAttribute="trailing" constant="62.333333333333314" id="nYQ-Ao-FDO"/>
+                                                <constraint firstItem="Q8Y-26-lMx" firstAttribute="leading" secondItem="XRJ-JF-xbH" secondAttribute="trailing" constant="71.333333333333343" id="ncB-Hy-xcy"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XRJ-JF-xbH" secondAttribute="trailing" constant="20" symbolic="YES" id="tLP-7B-aj9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="eventLabel" destination="XRJ-JF-xbH" id="7rT-2Q-V0c"/>
+                                            <outlet property="date" destination="XRJ-JF-xbH" id="htt-Un-se7"/>
+                                            <outlet property="emoji" destination="dh2-dW-tL2" id="e79-H6-Lf8"/>
+                                            <outlet property="name" destination="Q8Y-26-lMx" id="BfD-BC-7JE"/>
+                                            <outlet property="time" destination="2pY-OM-Dte" id="gxY-GJ-S7f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
