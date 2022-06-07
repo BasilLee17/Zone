@@ -9,8 +9,8 @@ import Foundation
 
 let accessTokenKey = "access-token-key"
 let redirectUri = URL(string:"hellospotify1://")!
-let spotifyClientId = "yourClientId"
-let spotifyClientSecretKey = "yourSecretKey"
+let spotifyClientId = "74678eac8cb149c28bda55dd7ab64d3e"
+let spotifyClientSecretKey = "33d1f29e96ea45178d8afa49f2b0aa8f"
 
 /*
 Scopes let you specify exactly what types of data your application wants to

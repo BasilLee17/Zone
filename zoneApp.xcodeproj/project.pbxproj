@@ -378,7 +378,7 @@
 				CODE_SIGN_ENTITLEMENTS = zoneApp/zoneApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 96CJ2Y243Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/zoneApp",
@@ -397,7 +397,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "Isabelle-Donsbach.zoneApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "Isabelle-Donsbach2000.zoneApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "zoneApp/zoneApp-Bridging-Header.h";
@@ -416,7 +416,7 @@
 				CODE_SIGN_ENTITLEMENTS = zoneApp/zoneApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 96CJ2Y243Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/zoneApp",
@@ -435,7 +435,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "Isabelle-Donsbach.zoneApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "Isabelle-Donsbach2000.zoneApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "zoneApp/zoneApp-Bridging-Header.h";
