@@ -17,18 +17,20 @@ class Event {
     var time: String!
     var emoji: String!
     
+    
     func eventsForDate(date: Date) -> [Event] {
         var daysEvents = [Event]()
         print("date: \(date)")
         
-        var monthDay = CalendarHelper().monthDayYear(date: date)
+        let monthDay = CalendarHelper().monthDayYear(date: date)
         print("monthDay: \(monthDay)")
         print("entriesCount: \(moodEntries.count)")
         for entry in moodEntries {
-            var event = Event()
+            let event = Event()
             if entry.monthDayYear == monthDay {
                 event.fullDate = date
-                event.date = entry.monthDayYear
+                let monthDay = entry.monthDayYear.components(separatedBy: ", ")
+                event.date = monthDay[0]
                 event.name = String(describing: entry.mood.stringValue)
                 event.emoji = entry.mood.stringEmoji
                 event.time = CalendarHelper().timeString(date: entry.date)

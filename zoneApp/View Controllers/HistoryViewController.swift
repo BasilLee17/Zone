@@ -68,7 +68,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         var count: Int = 1
         
-        while(count <= daysInMonth) {
+        while(count != daysInMonth) {
             totalSquares.append(String(count))
             count += 1
         }
@@ -240,9 +240,21 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let year = CalendarHelper().yearString(date: selectedDate)
         let month = CalendarHelper().monthString(date: selectedDate)
         dayReview = "\(String(describing: month)) \(String(describing: dayValue!)), \(year)"
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "MMMM d, yyyy"
+        if let date = dateFormatterGet.date(from: dayReview) {
+            print("date formatter: \(dateFormatterGet.string(from: date))")
+            selectedDate = date
+        } else {
+            print("There was an error decoding")
+        }
+        
+        
         dateReview = "\(String(describing: month)) \(String(describing: dayValue!)), \(year)"
         print("full day: \(dayReview)")
         print("full date: \(dateReview)")
+        
         
         let alertController = UIAlertController(title: "uh oh...", message: "You don't have any activity on \(String(describing: dayReview))", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)

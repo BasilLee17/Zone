@@ -13,4 +13,5 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var emoji: UILabel!
     @IBOutlet weak var time: UILabel!
+    
 }
