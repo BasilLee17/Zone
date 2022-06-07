@@ -44,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ov-qJ-Cje" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1723" y="591"/>
+            <point key="canvasLocation" x="-1724.2990654205607" y="590.9287257019439"/>
         </scene>
         <!--Mood-->
         <scene sceneID="ZF7-WP-2vm">
@@ -505,6 +505,67 @@
             </objects>
             <point key="canvasLocation" x="-164.01869158878503" y="590.9287257019439"/>
         </scene>
+        <!--TimerViewController-->
+        <scene sceneID="rqp-9p-9QE">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" title="TimerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BFs-GA-KCc" customClass="TimerViewController" customModule="zoneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="TimerViewController" id="ccD-Ht-Hrf">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETK-3H-mS0">
+                                <rect key="frame" x="151" y="376" width="126" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nER-hc-OR8">
+                                <rect key="frame" x="69" y="563" width="56" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                                <connections>
+                                    <action selector="startStopTapped:" destination="BFs-GA-KCc" eventType="touchUpInside" id="eU7-NS-Zr5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-Tp-QK3">
+                                <rect key="frame" x="292" y="563" width="61" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                                <connections>
+                                    <action selector="resetTapped:" destination="BFs-GA-KCc" eventType="touchUpInside" id="ZSd-Y6-jex"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditate :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydc-bZ-roT">
+                                <rect key="frame" x="151" y="189" width="137.66666666666663" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vd6-bB-VQc"/>
+                        <color key="backgroundColor" red="0.080257631839999996" green="0.0027108630169999999" blue="0.22746667270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="ETK-3H-mS0" firstAttribute="top" secondItem="ydc-bZ-roT" secondAttribute="bottom" constant="151" id="0BU-wG-XpC"/>
+                            <constraint firstItem="Pwy-Tp-QK3" firstAttribute="top" secondItem="Vd6-bB-VQc" secondAttribute="top" constant="519" id="0hz-hv-I69"/>
+                            <constraint firstItem="ydc-bZ-roT" firstAttribute="top" secondItem="Vd6-bB-VQc" secondAttribute="top" constant="145" id="JDZ-13-1IF"/>
+                            <constraint firstItem="nER-hc-OR8" firstAttribute="leading" secondItem="Vd6-bB-VQc" secondAttribute="leading" constant="69" id="JGo-ce-Y3U"/>
+                            <constraint firstItem="ydc-bZ-roT" firstAttribute="leading" secondItem="Vd6-bB-VQc" secondAttribute="leading" constant="151" id="SDi-yN-PbJ"/>
+                            <constraint firstItem="nER-hc-OR8" firstAttribute="top" secondItem="Vd6-bB-VQc" secondAttribute="top" constant="519" id="blb-25-Nca"/>
+                            <constraint firstItem="ETK-3H-mS0" firstAttribute="leading" secondItem="Vd6-bB-VQc" secondAttribute="leading" constant="151" id="ceH-9a-SDm"/>
+                            <constraint firstItem="Vd6-bB-VQc" firstAttribute="bottom" secondItem="ydc-bZ-roT" secondAttribute="bottom" constant="667" id="fEb-mh-hsc"/>
+                            <constraint firstItem="Vd6-bB-VQc" firstAttribute="trailing" secondItem="Pwy-Tp-QK3" secondAttribute="trailing" constant="75" id="zgh-4u-kxG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TimerLabel" destination="ETK-3H-mS0" id="MFd-v8-9mw"/>
+                        <outlet property="resetButton" destination="Pwy-Tp-QK3" id="1ba-Uw-5on"/>
+                        <outlet property="startStopButton" destination="nER-hc-OR8" id="W1h-PE-P6j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfz-wC-ozM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1724.2990654205607" y="1329.5896328293738"/>
+        </scene>
         <!--Mood Detailed View Controller-->
         <scene sceneID="gDF-VG-lGX">
             <objects>
@@ -621,7 +682,7 @@
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ccf-tY-HhF"/>
-                        <color key="backgroundColor" red="0.080257631839999996" green="0.0027108630169999999" blue="0.22746667270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.09037587792" green="0.0" blue="0.23631384969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="39R-BS-RHD" firstAttribute="centerX" secondItem="GEy-xf-9k6" secondAttribute="centerX" id="0c2-pn-jK2"/>
                             <constraint firstItem="X3l-XA-F9Y" firstAttribute="top" secondItem="vOx-GG-Kql" secondAttribute="bottom" constant="7.3333333333333144" id="4IS-yV-WvQ"/>
@@ -1073,6 +1134,9 @@
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="face.dashed" catalog="system" width="128" height="121"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
