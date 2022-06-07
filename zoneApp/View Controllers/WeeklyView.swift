@@ -20,7 +20,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     
-    @IBOutlet weak var weekLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -43,7 +43,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     func setCellsView()
     {
         let width = (collectionView.frame.size.width - 2) / 8
-        let height = (collectionView.frame.size.height - 2) / 8
+        let height = (collectionView.frame.size.height - 2)
         
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.itemSize = CGSize(width: width, height: height)
@@ -65,7 +65,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         let date = formatter.string(from: selectedDate)
         
         
-        weekLabel.text = CalendarHelper().monthString(date: selectedDate)
+        monthLabel.text = CalendarHelper().monthString(date: selectedDate)
             + " " + CalendarHelper().yearString(date: selectedDate)
         
         collectionView.reloadData()
@@ -85,14 +85,42 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
         
         let date = totalSquares[indexPath.item]
-        
+        print("date type: \(type(of: date))")
 //        cell.dayOfMonth.setTitle(, for: .normal)
+        let formattedDate = String(CalendarHelper().monthDayYear(date: date))
         cell.weekDayOfMonth.text = String(CalendarHelper().dayOfMonth(date: date))
         cell.moodEmoji.text = "🫥"
 //        cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
         
+        
+        print("formattedDate type: \(type(of: formattedDate))")
+        print("label: \(formattedDate)")
+        if formattedDate != "" {
+            for entry in moodEntries {
+//                let squareMood: Int? = Int(mood["dayOfMonth"] ?? 0)
+                print("mood month: \(entry.month)")
+                print("month label: \(String(describing: monthLabel.text!))")
+                print("struct day type: \(type(of: entry.dayOfMonth))")
+                print("totalSq num type: \(type(of: totalSquares[indexPath.item]))")
+                print("squares: \(totalSquares[indexPath.item])")
+                print("day: \(String(describing: entry.dayOfMonth))")
+
+                print("struct month day: \(type(of: entry.monthDayYear))")
+                print("entry month: \(entry.monthDayYear)")
+                if entry.monthDayYear == formattedDate {
+                    cell.moodEmoji.text = entry.mood.stringEmoji
+                    print("emoji: \(entry.mood.stringEmoji)")
+//                    cell.weekDayOfMonth.textColor = UIColor.systemBlue
+                } else {
+                    print("passed by the if statement")
+                }
+            }
+        }
+        
         if date == selectedDate {
             cell.backgroundColor = UIColor.systemGreen
+//            cell.moodEmoji.text = 
+            print("date print: \(CalendarHelper().monthDayYear(date: date))")
         } else {
             cell.backgroundColor = UIColor.white
         }
@@ -104,8 +132,8 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedDate = totalSquares[indexPath.item]
-        print("sel date: \(selectedDate)")
-//        selectedDate = CalendarHelper().monthDayYear(date: selectedDate)
+        let selDate = CalendarHelper().monthDayYear(date: selectedDate)
+        print("sel date: \(selDate)")
         collectionView.reloadData()
         tableView.reloadData()
     }

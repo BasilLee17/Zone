@@ -619,7 +619,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LF2-Lr-y9e">
-                                <rect key="frame" x="31.666666666666671" y="44" width="37" height="30.666666666666671"/>
+                                <rect key="frame" x="31.666666666666671" y="69" width="37" height="30.666666666666671"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
                                 <connections>
@@ -627,7 +627,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0p-HH-qGy">
-                                <rect key="frame" x="176" y="44" width="76.333333333333314" height="54.333333333333343"/>
+                                <rect key="frame" x="176" y="59" width="76.333333333333314" height="54.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54.333333333333343" id="B1s-KR-6pz"/>
                                 </constraints>
@@ -636,7 +636,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpd-Tu-jrY">
-                                <rect key="frame" x="115.99999999999999" y="44" width="46.333333333333329" height="30.666666666666671"/>
+                                <rect key="frame" x="115.99999999999999" y="69" width="46.333333333333329" height="30.666666666666671"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward.fill" catalog="system" title=""/>
                                 <connections>
@@ -644,7 +644,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK3-cx-If5">
-                                <rect key="frame" x="266" y="44" width="46.333333333333314" height="30.666666666666671"/>
+                                <rect key="frame" x="266" y="69" width="46.333333333333314" height="30.666666666666671"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right.fill" catalog="system"/>
                                 <connections>
@@ -652,7 +652,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bi9-Iy-LLv">
-                                <rect key="frame" x="0.0" y="123.33333333333333" width="428" height="20.333333333333329"/>
+                                <rect key="frame" x="0.0" y="138.33333333333334" width="428" height="20.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRX-Mg-67H">
                                         <rect key="frame" x="0.0" y="0.0" width="61" height="20.333333333333332"/>
@@ -699,7 +699,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gel-Nz-7ab">
-                                <rect key="frame" x="20" y="196" width="388" height="178.66666666666663"/>
+                                <rect key="frame" x="20" y="211" width="388" height="174.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="25" id="p2U-yx-Knm">
                                     <size key="itemSize" width="64" height="91"/>
@@ -758,7 +758,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2iW-hN-5SX">
-                                <rect key="frame" x="0.0" y="374.66666666666674" width="428" height="497.33333333333326"/>
+                                <rect key="frame" x="0.0" y="385.66666666666674" width="428" height="486.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" id="1C0-D5-8pw" customClass="EventCell">
@@ -796,11 +796,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2cG-G8-SQc" firstAttribute="trailing" secondItem="bi9-Iy-LLv" secondAttribute="trailing" id="5yo-eX-Axo"/>
-                            <constraint firstItem="PK3-cx-If5" firstAttribute="top" secondItem="2cG-G8-SQc" secondAttribute="top" id="6KL-zb-tHC"/>
+                            <constraint firstItem="PK3-cx-If5" firstAttribute="top" secondItem="2cG-G8-SQc" secondAttribute="top" constant="25" id="6KL-zb-tHC"/>
                             <constraint firstItem="bi9-Iy-LLv" firstAttribute="centerX" secondItem="pBb-nh-BPJ" secondAttribute="centerX" id="7dx-By-IWh"/>
                             <constraint firstItem="Gel-Nz-7ab" firstAttribute="centerX" secondItem="bi9-Iy-LLv" secondAttribute="centerX" id="91P-9u-ld1"/>
-                            <constraint firstItem="e0p-HH-qGy" firstAttribute="top" secondItem="2cG-G8-SQc" secondAttribute="top" id="Dnb-bk-EKt"/>
-                            <constraint firstItem="mpd-Tu-jrY" firstAttribute="top" secondItem="2cG-G8-SQc" secondAttribute="top" id="Fw1-h5-9To"/>
+                            <constraint firstItem="e0p-HH-qGy" firstAttribute="top" secondItem="2cG-G8-SQc" secondAttribute="top" constant="15" id="Dnb-bk-EKt"/>
+                            <constraint firstItem="mpd-Tu-jrY" firstAttribute="top" secondItem="2cG-G8-SQc" secondAttribute="top" constant="25" id="Fw1-h5-9To"/>
                             <constraint firstItem="mpd-Tu-jrY" firstAttribute="centerX" secondItem="pBb-nh-BPJ" secondAttribute="centerX" constant="-75" id="IX4-aS-GrL"/>
                             <constraint firstItem="2iW-hN-5SX" firstAttribute="leading" secondItem="2cG-G8-SQc" secondAttribute="leading" id="LyF-8E-wRg"/>
                             <constraint firstItem="PK3-cx-If5" firstAttribute="centerX" secondItem="pBb-nh-BPJ" secondAttribute="centerX" constant="75" id="VXx-L1-nmY"/>
@@ -809,7 +809,7 @@
                             <constraint firstItem="2iW-hN-5SX" firstAttribute="height" secondItem="Gel-Nz-7ab" secondAttribute="height" multiplier="2.78531" id="XFt-6K-Qxk"/>
                             <constraint firstItem="bi9-Iy-LLv" firstAttribute="leading" secondItem="2cG-G8-SQc" secondAttribute="leading" id="aTz-4m-MLJ"/>
                             <constraint firstItem="LF2-Lr-y9e" firstAttribute="centerX" secondItem="pBb-nh-BPJ" secondAttribute="leading" constant="50" id="d8M-BQ-jpC"/>
-                            <constraint firstItem="LF2-Lr-y9e" firstAttribute="top" secondItem="2cG-G8-SQc" secondAttribute="top" id="fw8-cr-5Oq"/>
+                            <constraint firstItem="LF2-Lr-y9e" firstAttribute="top" secondItem="2cG-G8-SQc" secondAttribute="top" constant="25" id="fw8-cr-5Oq"/>
                             <constraint firstItem="2iW-hN-5SX" firstAttribute="top" secondItem="Gel-Nz-7ab" secondAttribute="bottom" id="leE-lO-Pwp"/>
                             <constraint firstItem="2cG-G8-SQc" firstAttribute="bottom" secondItem="2iW-hN-5SX" secondAttribute="bottom" id="mKs-MW-NTB"/>
                             <constraint firstItem="e0p-HH-qGy" firstAttribute="centerX" secondItem="pBb-nh-BPJ" secondAttribute="centerX" id="p58-aO-33Q"/>
@@ -820,8 +820,8 @@
                     <navigationItem key="navigationItem" id="ZdJ-Ni-84b"/>
                     <connections>
                         <outlet property="collectionView" destination="Gel-Nz-7ab" id="sxr-Ka-068"/>
+                        <outlet property="monthLabel" destination="e0p-HH-qGy" id="agK-Sw-8U6"/>
                         <outlet property="tableView" destination="2iW-hN-5SX" id="3dd-o5-B8R"/>
-                        <outlet property="weekLabel" destination="e0p-HH-qGy" id="vyi-G0-rrt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmS-CK-V2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

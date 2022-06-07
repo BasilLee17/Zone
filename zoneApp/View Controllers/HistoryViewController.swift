@@ -230,6 +230,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
             let weeklyVC = segue.destination as!
             WeeklyViewController
             weeklyVC.day = dayReview
+            print("day review vc: \(dayReview)")
             break;
         default:
             print("I have no idea what segue you're using")
