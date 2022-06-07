@@ -22,7 +22,7 @@ class TimerViewController: UIViewController {
      
     override func viewDidLoad(){
         super.viewDidLoad()
-        startStopButton.setTitleColor(UIColor.green, for: .normal)
+        startStopButton.setTitleColor(UIColor.purple, for: .normal)
     }
     
      
