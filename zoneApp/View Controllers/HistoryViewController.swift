@@ -71,7 +71,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         var count: Int = 1
         
-        while(count != daysInMonth) {
+        while(count <= daysInMonth) {
             totalSquares.append(String(count))
             count += 1
         }
