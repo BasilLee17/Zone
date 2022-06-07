@@ -62,6 +62,7 @@ class MeditateViewController: UIViewController {
     // MARK: - Subviews
     let stackView = UIStackView()
     let connectLabel = UILabel()
+    let connectLabel2 = UILabel()
     let connectButton = UIButton(type: .system)
     let imageView = UIImageView()
     let trackLabel = UILabel()
@@ -136,8 +137,13 @@ extension MeditateViewController {
 
         connectLabel.translatesAutoresizingMaskIntoConstraints = false
         connectLabel.text = "Meditate with Music"
-        connectLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        connectLabel.font = UIFont.preferredFont(forTextStyle: .title1)
         connectLabel.textColor = .systemGreen
+        
+        connectLabel2.translatesAutoresizingMaskIntoConstraints = false
+        connectLabel2.text = "Select track on Spotify then Start Meditation"
+        connectLabel2.font = UIFont.preferredFont(forTextStyle: .title3)
+        connectLabel2.textColor = .systemGreen
 
         connectButton.translatesAutoresizingMaskIntoConstraints = false
         connectButton.configuration = .filled()
@@ -166,6 +172,7 @@ extension MeditateViewController {
     func layout() {
 
         stackView.addArrangedSubview(connectLabel)
+        stackView.addArrangedSubview(connectLabel2)
         stackView.addArrangedSubview(connectButton)
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(trackLabel)
@@ -185,6 +192,7 @@ extension MeditateViewController {
             connectButton.isHidden = true
             signOutButton.isHidden = false
             connectLabel.isHidden = true
+            connectLabel2.isHidden = true
             imageView.isHidden = false
             trackLabel.isHidden = false
             playPauseButton.isHidden = false
@@ -193,6 +201,7 @@ extension MeditateViewController {
             signOutButton.isHidden = true
             connectButton.isHidden = false
             connectLabel.isHidden = false
+            connectLabel2.isHidden = false
             imageView.isHidden = true
             trackLabel.isHidden = true
             playPauseButton.isHidden = true
