@@ -144,12 +144,12 @@ extension MeditateViewController {
         connectLabel.translatesAutoresizingMaskIntoConstraints = false
         connectLabel.text = "Meditate with Music"
         connectLabel.font = UIFont.preferredFont(forTextStyle: .title1)
-        connectLabel.textColor = .systemGreen
+        connectLabel.textColor = UIColor.purple
         
         connectLabel2.translatesAutoresizingMaskIntoConstraints = false
         connectLabel2.text = "Select track on Spotify then Start Meditation"
         connectLabel2.font = UIFont.preferredFont(forTextStyle: .title3)
-        connectLabel2.textColor = .systemGreen
+        connectLabel2.textColor = UIColor.purple
 
         connectButton.translatesAutoresizingMaskIntoConstraints = false
         connectButton.configuration = .filled()
