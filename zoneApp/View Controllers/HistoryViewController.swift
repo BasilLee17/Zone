@@ -24,6 +24,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var numDayProgress: UILabel!
     
     var totalSquares = [String]()
 //    let tapGesture = UITapGestureRecognizer(target: HistoryViewController.self, action: #selector(tappedLabel(tapGestureRecognizer:)))
@@ -75,6 +76,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         monthLabel.text = CalendarHelper().monthString(date: selectedDate)
             + " " + CalendarHelper().yearString(date: selectedDate)
+        numDayProgress.text = String(describing: CalendarHelper().totalDayProgress(entries: moodEntries))
         
         collectionView.reloadData()
     }
@@ -297,6 +299,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        numDayProgress.text = CalendarHelper().totalDayProgress(entries: moodEntries)
         collectionView.reloadData()
     }
 

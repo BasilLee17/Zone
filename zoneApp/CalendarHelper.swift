@@ -111,4 +111,18 @@ class CalendarHelper
         return current
     }
     
+    func totalDayProgress(entries: [MoodEntry]) -> String {
+        var count = 0
+        var daysCounted: [String] = []
+        for entry in entries {
+            if daysCounted.contains(entry.monthDayYear) {
+                print("already here")
+            } else {
+                daysCounted.append(entry.monthDayYear)
+            }
+        }
+        print("count: \(daysCounted.count)")
+        return String(describing: daysCounted.count)
+    }
+    
 }
