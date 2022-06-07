@@ -7,9 +7,8 @@
 
 import UIKit
 
-var moodEntries: [MoodEntry] = []
-
 class MoodViewController: UIViewController {
+    var moodEntries: [MoodEntry] = []
     
     func createEntry(mood: MoodEntry.Mood, date: Date) {
         let newEntry = MoodEntry(mood: mood, date: date)

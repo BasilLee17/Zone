@@ -69,14 +69,6 @@ class CalendarHelper
         return components.day!
     }
     
-    func monthAndYear(date: Date) -> String {
-        return "\(monthString(date: date)) \(yearString(date: date))"
-    }
-    
-    func monthDayYear(date: Date) -> String {
-        return "\(monthString(date: date)) \(dayOfMonth(date: date)), \(yearString(date: date))"
-    }
-    
     func firstOfMonth(date: Date) -> Date
     {
         let components = calendar.dateComponents([.year, .month], from: date)
@@ -109,20 +101,6 @@ class CalendarHelper
             current = addDays(date: current, days: -1)
         }
         return current
-    }
-    
-    func totalDayProgress(entries: [MoodEntry]) -> Int {
-        var count = 0
-        var daysCounted: [String] = []
-        for entry in entries {
-            if daysCounted.contains(entry.monthDayYear) {
-                print("already here")
-            } else {
-                daysCounted.append(entry.monthDayYear)
-            }
-        }
-        print("count: \(daysCounted.count)")
-        return daysCounted.count
     }
     
 }

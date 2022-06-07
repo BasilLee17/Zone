@@ -8,27 +8,9 @@
 import Foundation
 import UIKit
 
-struct MoodEntry {
+struct MoodEntry{
     var mood: Mood
     var date: Date
-    var dayOfMonth: String {
-        return String(describing: CalendarHelper().dayOfMonth(date: date))
-    }
-    var month: String {
-        return CalendarHelper().monthAndYear(date: date)
-    }
-    
-    var monthDayYear: String {
-        return CalendarHelper().monthDayYear(date: date)
-    }
-    
-    
-    public func setDayOfMonth(_ enteredDate: Date) -> String {
-        return String(describing: CalendarHelper().dayOfMonth(date: enteredDate))
-    }
-    public func setMonthString(_ enteredDate: Date) -> String {
-        return CalendarHelper().monthAndYear(date: enteredDate)
-    }
     
         enum Mood: Int {
             case none
@@ -54,10 +36,6 @@ struct MoodEntry {
                     return "Terrible"
                 }
             }
-            
-//            var dayOfMonth: String {
-//
-//            }
 
             var colorValue: UIColor {
                 switch self {
