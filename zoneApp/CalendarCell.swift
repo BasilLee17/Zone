@@ -10,7 +10,7 @@ import UIKit
 class CalendarCell: UICollectionViewCell {
     
     @IBOutlet weak var dayOfMonth: UIButton!
-    @IBOutlet weak var weekDayOfMonth: UILabel!
+//    @IBOutlet weak var weekDayOfMonth: UILabel!
     
     @IBOutlet weak var moodEmoji: UILabel!
     

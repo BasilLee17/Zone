@@ -8,24 +8,10 @@
 import UIKit
 
 class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count of events: \(eventsList.count)")
-        print("count of array: \(Event().eventsForDate(date: selectedDate).count)")
-        return eventsList.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! EventCell
-        print("selected Date: \(selectedDate)")
-        print("indexPath: \(indexPath.row)")
-        print("event date: \(String(describing: eventsList[indexPath.row].date))")
-        cell.date!.text = eventsList[indexPath.row].date
-        cell.name!.text = eventsList[indexPath.row].name
-        cell.emoji!.text = eventsList[indexPath.row].emoji
-        cell.time!.text = eventsList[indexPath.row].time
-        
-        return cell
-    }
+//    func tableView(_ tableView: UITableView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//
+//    }
     
     
     @IBOutlet weak var monthLabel: UILabel!
@@ -46,7 +32,6 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
         setCellsView()
         setWeekView()
-        setEvents()
     }
     
     func setCellsView()
@@ -81,11 +66,6 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         tableView.reloadData()
     }
     
-    func setEvents() -> [Event] {
-        eventsList = Event().eventsForDate(date: selectedDate)
-        return eventsList
-    }
-    
     
 //    func numberOfSections(in collectionView: UICollectionView) -> Int {
 //        return totalSquares.count
@@ -99,10 +79,10 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
         
         let date = totalSquares[indexPath.item]
-        print("date type: \(type(of: date))")
+//        print("date type: \(type(of: date))")
 //        cell.dayOfMonth.setTitle(, for: .normal)
         let formattedDate = String(CalendarHelper().monthDayYear(date: date))
-        cell.weekDayOfMonth.text = String(CalendarHelper().dayOfMonth(date: date))
+//        cell.weekDayOfMonth.text = String(CalendarHelper().dayOfMonth(date: date))
         cell.moodEmoji.text = "🫥"
 //        cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
         
@@ -150,7 +130,6 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         print("sel date: \(selDate)")
         collectionView.reloadData()
         tableView.reloadData()
-        setEvents()
     }
     
     private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -158,6 +137,25 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
             return CGSize(width: collectionView.bounds.size.width/3 - 25, height: collectionView.bounds.size.height/3 - 25)
       }
     
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! EventCell
+        print("selected Date: \(selectedDate)")
+        print("indexPath: \(indexPath.row)")
+//        print("event date: \(String(describing: eventsList[indexPath.row].date))")
+        cell.date!.text = eventsList[indexPath.row].date
+        cell.name!.text = eventsList[indexPath.row].name
+        cell.emoji!.text = eventsList[indexPath.row].emoji
+        cell.time!.text = eventsList[indexPath.row].time
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("count of events: \(eventsList.count)")
+        print("count of array: \(Event().eventsForDate(date: selectedDate).count)")
+        return eventsList.count
+    }
 //    func collectionView(_ collectionView: UICollectionView,
 //                        layout collectionViewLayout: UICollectionViewLayout,
 //                        insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -210,9 +208,4 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
 //        super.viewDidAppear(animated)
 //        tableView.reloadData()
 //    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
 }

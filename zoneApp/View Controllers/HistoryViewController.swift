@@ -44,8 +44,8 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func setCellsView()
     {
-        let width = (collectionView.frame.size.width - 2) / 8
-        let height = (collectionView.frame.size.height - 2) / 8
+        let width = (collectionView.frame.size.width - 2) / 7
+        let height = (collectionView.frame.size.height - 2) / 7
         
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.itemSize = CGSize(width: width, height: height)
@@ -66,18 +66,10 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
         
-        var count: Int = 0
+        var count: Int = 1
         
-        while(count < 42)
-        {
-            if(count <= startingSpaces || count - startingSpaces > daysInMonth)
-            {
-                totalSquares.append("")
-            }
-            else
-            {
-                totalSquares.append(String(count - startingSpaces))
-            }
+        while(count <= daysInMonth) {
+            totalSquares.append(String(count))
             count += 1
         }
         
@@ -102,7 +94,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         cell.dayOfMonth.setTitle("\(totalSquares[indexPath.item])", for: .normal)
         cell.moodEmoji.text = String(describing: "🫥")
-        cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
+//        cell.dayOfMonth.setTitleColor(UIColor(, for: .normal)
         print("num square: \(totalSquares[indexPath.item])")
         if totalSquares[indexPath.item] != "" {
             let currentMonth = monthLabel.text
@@ -162,7 +154,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
 //                    }
                     cell.moodEmoji.text = entry.mood.stringEmoji
                     print("emoji: \(entry.mood.stringEmoji)")
-                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
+//                    cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
                 } else {
                     print("passed by the if statement")
                 }
@@ -182,10 +174,10 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         var count: Int = 0
     }
     
-    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-
-            return CGSize(width: collectionView.bounds.size.width/3 - 25, height: collectionView.bounds.size.height/3 - 25)
-      }
+//    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//
+//            return CGSize(width: collectionView.bounds.size.width + 177, height: collectionView.bounds.size.height + 200)
+//      }
     
 //    func collectionView(_ collectionView: UICollectionView,
 //                        layout collectionViewLayout: UICollectionViewLayout,
@@ -243,7 +235,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         var dayValue: String?
         dayValue = sender.currentTitle
 //        print("day type: \(type(of: dayValue))")
-//        print("day string: \(dayValue!)")
+        print("day string: \(dayValue!)")
         
         let year = CalendarHelper().yearString(date: selectedDate)
         let month = CalendarHelper().monthString(date: selectedDate)
@@ -256,15 +248,15 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         let OKAction = UIAlertAction(title: "OK", style: .default)
         dayEntry = [:]
         
-        for entry in moodHistory {
-            print("entry: \(entry)")
-            if entry["date"] == dayReview {
-                dayEntry = entry
-                print("matched date: \(String(describing: entry["date"]!))")
-            } else {
-                print("not matched: \(String(describing: entry["date"]!))")
-            }
-        }
+//        for entry in moodHistory {
+//            print("entry: \(entry)")
+//            if entry["date"] == dayReview {
+//                dayEntry = entry
+//                print("matched date: \(String(describing: entry["date"]!))")
+//            } else {
+//                print("not matched: \(String(describing: entry["date"]!))")
+//            }
+//        }
         
         dateEntry = ""
         
