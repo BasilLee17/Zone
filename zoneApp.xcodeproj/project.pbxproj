@@ -16,7 +16,7 @@
 		7C3327D6284D13A400C74B3A /* MoodEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327D5284D13A400C74B3A /* MoodEntryTableViewCell.swift */; };
 		7C3327D8284D1E5200C74B3A /* DateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327D7284D1E5200C74B3A /* DateString.swift */; };
 		7C3327DA284D6BD000C74B3A /* userNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327D9284D6BD000C74B3A /* userNotification.swift */; };
-		91E4D539284DF14300BEBDE5 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E4D538284DF14300BEBDE5 /* SpotifyiOS.framework */; };
+		918455C1284FF36E00C6487B /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918455C0284FF36E00C6487B /* SpotifyiOS.framework */; };
 		91E4D541284DF28200BEBDE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4D540284DF28200BEBDE5 /* Constants.swift */; };
 		CA1BA95A284042C8001E112D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BA959284042C8001E112D /* AppDelegate.swift */; };
 		CA1BA95C284042C8001E112D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BA95B284042C8001E112D /* SceneDelegate.swift */; };
@@ -42,7 +42,7 @@
 		7C3327D7284D1E5200C74B3A /* DateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateString.swift; sourceTree = "<group>"; };
 		7C3327D9284D6BD000C74B3A /* userNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userNotification.swift; sourceTree = "<group>"; };
 		7C3327DB284D6E1700C74B3A /* zoneApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zoneApp.entitlements; sourceTree = "<group>"; };
-		91E4D538284DF14300BEBDE5 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		918455C0284FF36E00C6487B /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 		91E4D53D284DF22800BEBDE5 /* zoneApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zoneApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		91E4D540284DF28200BEBDE5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CA1BA956284042C8001E112D /* zoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91E4D539284DF14300BEBDE5 /* SpotifyiOS.framework in Frameworks */,
+				918455C1284FF36E00C6487B /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +135,8 @@
 				CA1BA967284042CD001E112D /* Info.plist */,
 				CACC94EE2844851C000590FB /* MeditateViewController.swift */,
 				CACC94F028448557000590FB /* HistoryViewController.swift */,
+				918455C0284FF36E00C6487B /* SpotifyiOS.framework */,
 				DBB76AA02847A98C007DBA06 /* DayViewController.swift */,
-				91E4D538284DF14300BEBDE5 /* SpotifyiOS.framework */,
 				91E4D53D284DF22800BEBDE5 /* zoneApp-Bridging-Header.h */,
 				91E4D540284DF28200BEBDE5 /* Constants.swift */,
 				41AADDD0284FE3A300657CC8 /* TimerViewController.swift */,
