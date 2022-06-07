@@ -8,7 +8,8 @@
 import UIKit
 
 class MeditateViewController: UIViewController {
-
+    
+    
     // MARK: - Spotify Authorization & Configuration
     var responseCode: String? {
         didSet {
@@ -115,6 +116,10 @@ class MeditateViewController: UIViewController {
     @objc func didTapConnect(_ button: UIButton) {
         guard let sessionManager = sessionManager else { return }
         sessionManager.initiateSession(with: scopes, options: .clientOnly)
+        
+        let TimerViewController = storyboard?.instantiateViewController(withIdentifier: "TimerViewController") as! TimerViewController
+        
+        present(TimerViewController, animated: true, completion: nil)
     }
 
     // MARK: - Private Helpers
@@ -153,7 +158,9 @@ extension MeditateViewController {
         connectButton.setTitle("Start Meditation", for: [])
         connectButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
         connectButton.addTarget(self, action: #selector(didTapConnect), for: .primaryActionTriggered)
-
+        //connectButton.addTarget(self, action: #selector(TimerController), for: .touchUpInside)
+        
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
 

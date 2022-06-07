@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41AADDD1284FE3A300657CC8 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AADDD0284FE3A300657CC8 /* TimerViewController.swift */; };
 		7C3327C6284C7D8100C74B3A /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327C5284C7D8100C74B3A /* MoodEntry.swift */; };
 		7C3327C8284C81EB00C74B3A /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327C7284C81EB00C74B3A /* Mood.swift */; };
 		7C3327CE284C8D7600C74B3A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3327CD284C8D7600C74B3A /* UIColor.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41AADDD0284FE3A300657CC8 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		7C3327C5284C7D8100C74B3A /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
 		7C3327C7284C81EB00C74B3A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		7C3327CD284C8D7600C74B3A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				91E4D538284DF14300BEBDE5 /* SpotifyiOS.framework */,
 				91E4D53D284DF22800BEBDE5 /* zoneApp-Bridging-Header.h */,
 				91E4D540284DF28200BEBDE5 /* Constants.swift */,
+				41AADDD0284FE3A300657CC8 /* TimerViewController.swift */,
 			);
 			path = zoneApp;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				7C3327C8284C81EB00C74B3A /* Mood.swift in Sources */,
 				7C3327DA284D6BD000C74B3A /* userNotification.swift in Sources */,
 				CACC94F128448557000590FB /* HistoryViewController.swift in Sources */,
+				41AADDD1284FE3A300657CC8 /* TimerViewController.swift in Sources */,
 				CA1BA95C284042C8001E112D /* SceneDelegate.swift in Sources */,
 				DBB76A9F28471C96007DBA06 /* CalendarHelper.swift in Sources */,
 				7C3327CE284C8D7600C74B3A /* UIColor.swift in Sources */,
