@@ -227,23 +227,23 @@
                                 <rect key="frame" x="30" y="124.33333333333333" width="378" height="159.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="S7V-1H-nWv">
-                                        <rect key="frame" x="0.0" y="0.0" width="99.333333333333329" height="159.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="109.33333333333333" height="159.66666666666666"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wd3-DH-wBI">
-                                                <rect key="frame" x="0.0" y="0.0" width="99.333333333333329" height="68.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="109.33333333333333" height="68.666666666666671"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="calendar" catalog="system" title="">
                                                     <color key="baseForegroundColor" red="0.34901961679999999" green="0.35686278339999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHH-P8-Es3">
-                                                <rect key="frame" x="0.0" y="68.666666666666671" width="99.333333333333329" height="45.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="68.666666666666671" width="109.33333333333333" height="45.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.34901961679999999" green="0.35686278339999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="# of days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vno-VV-dmc" userLabel="# days">
-                                                <rect key="frame" x="0.0" y="114.00000000000001" width="99.333333333333329" height="45.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="114.00000000000001" width="109.33333333333333" height="45.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.34901961679999999" green="0.35686278339999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -258,23 +258,23 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="s9p-fi-gJG">
-                                        <rect key="frame" x="109.33333333333334" y="0.0" width="107" height="159.66666666666666"/>
+                                        <rect key="frame" x="119.33333333333334" y="0.0" width="80" height="159.66666666666666"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdK-1m-cN9">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="68.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="68.333333333333329"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="clock" catalog="system" title="">
                                                     <color key="baseForegroundColor" red="0.34901961679999999" green="0.35686278339999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-9J-Ipd">
-                                                <rect key="frame" x="0.0" y="68.333333333333329" width="107" height="38"/>
+                                                <rect key="frame" x="0.0" y="68.333333333333329" width="80" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.34901961679999999" green="0.35686278339999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqB-uX-GJr">
-                                                <rect key="frame" x="0.0" y="106.33333333333333" width="107" height="53.333333333333329"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqB-uX-GJr">
+                                                <rect key="frame" x="0.0" y="106.33333333333333" width="80" height="53.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" red="0.34901961679999999" green="0.35686278339999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -289,23 +289,23 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VXD-fv-NGo">
-                                        <rect key="frame" x="226.33333333333331" y="0.0" width="151.66666666666669" height="159.66666666666666"/>
+                                        <rect key="frame" x="209.33333333333337" y="0.0" width="168.66666666666663" height="159.66666666666666"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFX-9M-778">
-                                                <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="68.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="68.333333333333329"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system">
                                                     <color key="baseForegroundColor" red="0.34901961679999999" green="0.35686278339999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdE-H7-4nN">
-                                                <rect key="frame" x="0.0" y="68.333333333333329" width="151.66666666666666" height="38"/>
+                                                <rect key="frame" x="0.0" y="68.333333333333329" width="168.66666666666666" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.34901961679999999" green="0.35686278339999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-Na-V2K">
-                                                <rect key="frame" x="0.0" y="106.33333333333333" width="151.66666666666666" height="53.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="106.33333333333333" width="168.66666666666666" height="53.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" red="0.34901961679999999" green="0.35686278339999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -508,6 +508,7 @@
                         <outlet property="collectionView" destination="taQ-iQ-me8" id="LUj-zb-R1c"/>
                         <outlet property="monthLabel" destination="3ls-aD-Gat" id="K8K-Nd-dqZ"/>
                         <outlet property="numDayProgress" destination="vno-VV-dmc" id="CfK-2u-jVX"/>
+                        <outlet property="numWeeklyProgress" destination="XWk-Na-V2K" id="ODq-3g-Aoh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YjO-nT-etS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -701,32 +702,32 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" id="8Tm-BS-ieC" customClass="EventCell" customModule="zoneApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="388" height="45.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="388" height="44.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Tm-BS-ieC" id="8Rc-Cc-qHb">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="45.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="44.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSB-lM-g6A">
-                                                    <rect key="frame" x="20" y="12.000000000000002" width="36" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="12.000000000000002" width="36" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRm-w8-AMd">
-                                                    <rect key="frame" x="127.33333333333333" y="12.000000000000002" width="42.333333333333329" height="21.666666666666671"/>
+                                                    <rect key="frame" x="127.33333333333333" y="12.000000000000002" width="42.333333333333329" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🫥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-ey-jwC">
-                                                    <rect key="frame" x="232" y="12.000000000000002" width="23" height="21.666666666666671"/>
+                                                    <rect key="frame" x="232" y="12.000000000000002" width="23" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-nU-teW">
-                                                    <rect key="frame" x="326.33333333333331" y="12.000000000000002" width="37.666666666666686" height="21.666666666666671"/>
+                                                    <rect key="frame" x="326.33333333333331" y="12.000000000000002" width="37.666666666666686" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

@@ -111,7 +111,7 @@ class CalendarHelper
         return current
     }
     
-    func totalDayProgress(entries: [MoodEntry]) -> String {
+    func totalDayProgress(entries: [MoodEntry]) -> Int {
         var count = 0
         var daysCounted: [String] = []
         for entry in entries {
@@ -122,7 +122,7 @@ class CalendarHelper
             }
         }
         print("count: \(daysCounted.count)")
-        return String(describing: daysCounted.count)
+        return daysCounted.count
     }
     
 }

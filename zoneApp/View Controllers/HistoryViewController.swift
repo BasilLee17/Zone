@@ -26,6 +26,8 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var numDayProgress: UILabel!
     
+    @IBOutlet weak var numWeeklyProgress: UILabel!
+    
     var totalSquares = [String]()
 //    let tapGesture = UITapGestureRecognizer(target: HistoryViewController.self, action: #selector(tappedLabel(tapGestureRecognizer:)))
 //
@@ -76,7 +78,12 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         monthLabel.text = CalendarHelper().monthString(date: selectedDate)
             + " " + CalendarHelper().yearString(date: selectedDate)
-        numDayProgress.text = String(describing: CalendarHelper().totalDayProgress(entries: moodEntries))
+        
+        let initProgress = CalendarHelper().totalDayProgress(entries: moodEntries)
+        numDayProgress.text = String(describing: initProgress)
+        let doubleValue = Double(initProgress) / Double(7)
+        let weeklyProgress = round(doubleValue * 10) / 10.0
+        numWeeklyProgress.text = String(describing: weeklyProgress)
         
         collectionView.reloadData()
     }
@@ -299,7 +306,11 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        numDayProgress.text = CalendarHelper().totalDayProgress(entries: moodEntries)
+        let initProgress = CalendarHelper().totalDayProgress(entries: moodEntries)
+        numDayProgress.text = String(describing: initProgress)
+        let doubleValue = Double(initProgress) / Double(7)
+        let weeklyProgress = round(doubleValue * 10) / 10.0
+        numWeeklyProgress.text = String(describing: weeklyProgress)
         collectionView.reloadData()
     }
 
