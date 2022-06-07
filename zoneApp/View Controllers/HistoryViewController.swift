@@ -39,6 +39,7 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         setCellsView()
         setMonthView()
 //        print("moodEntry string value: \(moodEntries[0].mood) \(moodEntries[0].dayOfMonth)")
+        print("moodEntries: \(moodEntries)")
     }
     
     func setCellsView()
@@ -97,11 +98,12 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
+        let date = totalSquares[indexPath.item]
         
         cell.dayOfMonth.setTitle("\(totalSquares[indexPath.item])", for: .normal)
         cell.moodEmoji.text = String(describing: "🫥")
         cell.dayOfMonth.setTitleColor(UIColor.red, for: .normal)
-//        print("num square: \(totalSquares[indexPath.item])")
+        print("num square: \(totalSquares[indexPath.item])")
         if totalSquares[indexPath.item] != "" {
             let currentMonth = monthLabel.text
 //            for mood in moodHistory {
@@ -161,6 +163,8 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
                     cell.moodEmoji.text = entry.mood.stringEmoji
                     print("emoji: \(entry.mood.stringEmoji)")
                     cell.dayOfMonth.setTitleColor(UIColor.blue, for: .normal)
+                } else {
+                    print("passed by the if statement")
                 }
             }
         } else {
@@ -285,4 +289,10 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
+
 }

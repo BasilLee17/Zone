@@ -105,6 +105,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedDate = totalSquares[indexPath.item]
         print("sel date: \(selectedDate)")
+//        selectedDate = CalendarHelper().monthDayYear(date: selectedDate)
         collectionView.reloadData()
         tableView.reloadData()
     }
