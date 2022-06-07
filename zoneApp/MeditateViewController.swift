@@ -68,6 +68,7 @@ class MeditateViewController: UIViewController {
     let trackLabel = UILabel()
     let playPauseButton = UIButton(type: .system)
     let signOutButton = UIButton(type: .system)
+    
 
     // MARK: App Life Cycle
     override func viewDidLoad() {
@@ -189,6 +190,7 @@ extension MeditateViewController {
 
     func updateViewBasedOnConnected() {
         if appRemote.isConnected == true {
+            print("i am here")
             connectButton.isHidden = true
             signOutButton.isHidden = false
             connectLabel.isHidden = true
@@ -212,6 +214,7 @@ extension MeditateViewController {
 // MARK: - SPTAppRemoteDelegate
 extension MeditateViewController: SPTAppRemoteDelegate {
     func appRemoteDidEstablishConnection(_ appRemote: SPTAppRemote) {
+        print("i am inside establishconnection")
         updateViewBasedOnConnected()
         appRemote.playerAPI?.delegate = self
         appRemote.playerAPI?.subscribe(toPlayerState: { (success, error) in
