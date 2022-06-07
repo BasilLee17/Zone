@@ -509,18 +509,18 @@
         <scene sceneID="rqp-9p-9QE">
             <objects>
                 <viewController storyboardIdentifier="TimerViewController" title="TimerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BFs-GA-KCc" customClass="TimerViewController" customModule="zoneApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="TimerViewController" id="ccD-Ht-Hrf">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="TimerViewController" id="ccD-Ht-Hrf">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETK-3H-mS0">
-                                <rect key="frame" x="151" y="376" width="126" height="36"/>
+                                <rect key="frame" x="151" y="420" width="126" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nER-hc-OR8">
-                                <rect key="frame" x="69" y="563" width="56" height="31"/>
+                                <rect key="frame" x="69" y="607" width="56" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start"/>
                                 <connections>
@@ -528,7 +528,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-Tp-QK3">
-                                <rect key="frame" x="292" y="563" width="61" height="31"/>
+                                <rect key="frame" x="292" y="607" width="61" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Reset"/>
                                 <connections>
@@ -536,11 +536,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditate :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydc-bZ-roT">
-                                <rect key="frame" x="151" y="189" width="137.66666666666663" height="36"/>
+                                <rect key="frame" x="151" y="233" width="137.66666666666663" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jit-eS-eHX">
+                                <rect key="frame" x="64" y="106" width="56" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="BFs-GA-KCc" eventType="touchUpInside" id="2bk-4P-6pN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vd6-bB-VQc"/>
                         <color key="backgroundColor" red="0.080257631839999996" green="0.0027108630169999999" blue="0.22746667270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -556,15 +565,17 @@
                             <constraint firstItem="Vd6-bB-VQc" firstAttribute="trailing" secondItem="Pwy-Tp-QK3" secondAttribute="trailing" constant="75" id="zgh-4u-kxG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hmb-QD-JgW"/>
                     <connections>
                         <outlet property="TimerLabel" destination="ETK-3H-mS0" id="MFd-v8-9mw"/>
+                        <outlet property="backButton" destination="Jit-eS-eHX" id="nbC-fd-085"/>
                         <outlet property="resetButton" destination="Pwy-Tp-QK3" id="1ba-Uw-5on"/>
                         <outlet property="startStopButton" destination="nER-hc-OR8" id="W1h-PE-P6j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfz-wC-ozM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1724.2990654205607" y="1329.5896328293738"/>
+            <point key="canvasLocation" x="-824.29906542056074" y="1329.5896328293738"/>
         </scene>
         <!--Mood Detailed View Controller-->
         <scene sceneID="gDF-VG-lGX">
@@ -718,7 +729,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8H-Ap-rxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="SNc-uk-p0p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-949.06542056074761" y="1329.5896328293738"/>
+            <point key="canvasLocation" x="-49.065420560747661" y="1329.5896328293738"/>
         </scene>
         <!--Day View Controller-->
         <scene sceneID="f5x-j1-RDu">
@@ -840,7 +851,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQP-QP-8BV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164" y="1262"/>
+            <point key="canvasLocation" x="735.98130841121485" y="1261.5550755939526"/>
         </scene>
         <!--Journal View Controller-->
         <scene sceneID="KPx-WW-UH3">
@@ -1116,12 +1127,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmS-CK-V2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542.52336448598123" y="1061.9870410367171"/>
+            <point key="canvasLocation" x="1441.1214953271028" y="1061.9870410367171"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZWg-m6-nFP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GIt-wP-8h2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XzQ-eK-924">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BFs-GA-KCc" kind="relationship" relationship="rootViewController" id="eJj-sC-amI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UQZ-Sk-dbJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1724.2990654205607" y="1329.5896328293738"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jIb-rd-DTl"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
