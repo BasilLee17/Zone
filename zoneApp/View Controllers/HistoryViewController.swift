@@ -179,8 +179,30 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
-    func findMoodEmoji() {
-        var count: Int = 0
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Compute the dimension of a cell for an NxN layout with space S between
+        // cells.  Take the collection view's width, subtract (N-1)*S points for
+        // the spaces between the cells, and then divide by N to find the final
+        // dimension for the cell's width and height.
+
+        let cellsAcross: CGFloat = 20
+        let spaceBetweenCells: CGFloat = 20
+        let dim = (collectionView.bounds.width - (cellsAcross - 1) * spaceBetweenCells) / cellsAcross
+        return CGSize(width: dim, height: dim)
     }
     
 //    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
