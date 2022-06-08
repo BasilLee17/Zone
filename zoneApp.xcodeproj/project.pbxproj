@@ -98,8 +98,6 @@
 				7C3327D1284CA50A00C74B3A /* MoodDetailedViewController.swift */,
 				CACC94EC284484DE000590FB /* MoodViewController.swift */,
 				DBF0696C284E20AC00C9E9B6 /* JournalViewController.swift */,
-				CACC94F028448557000590FB /* HistoryViewController.swift */,
-				DBB76AA02847A98C007DBA06 /* DayViewController.swift */,
 				DBF0696A284E192700C9E9B6 /* WeeklyView.swift */,
 			);
 			path = "View Controllers";
@@ -133,6 +131,8 @@
 				CA1BA95B284042C8001E112D /* SceneDelegate.swift */,
 				CA1BA95F284042C8001E112D /* Main.storyboard */,
 				DBB76A9E28471C96007DBA06 /* CalendarHelper.swift */,
+				DBB76AA02847A98C007DBA06 /* DayViewController.swift */,
+				CACC94F028448557000590FB /* HistoryViewController.swift */,
 				DB1D3FA6284E4167009239F6 /* Event.swift */,
 				DBB76A9C284717AD007DBA06 /* CalendarCell.swift */,
 				DB1D3FA4284E4028009239F6 /* EventCell.swift */,
