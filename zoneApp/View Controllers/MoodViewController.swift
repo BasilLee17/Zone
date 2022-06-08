@@ -98,6 +98,39 @@ class MoodViewController: UIViewController {
         
         moodEntries = [goodEntry, sadEntry]
         tableView.reloadData()
+        
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options:[.alert,.sound]) {
+            (granted,error) in
+            // Code here
+            if granted {
+                print("All set")
+            } else if let error = error {
+                        print("Error: ", error)
+            }
+        }
+        
+        //notification content
+        let content = UNMutableNotificationContent()
+        content.title = "Start your Daily Check-In"
+        content.body = "Did you meditate today?"
+        
+        //notification trigger
+        let date = Date().addingTimeInterval(10)
+        let dateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats:false)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        //create request
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content:content, trigger:trigger)
+        
+        //register request
+        center.add(request) { (error) in
+            //Check the erorr parameter and handle any errors
+            
+        }
 
     }
     override func viewWillAppear(_ animated: Bool) {
